@@ -1,0 +1,7 @@
+syntax: glob
+
+.DS_Store
+*.swp
+*.swo
+iGoat/iGoat.xcodeproj/xcuserdata/*
+iGoat/iGoat.xcodeproj/project.xcworkspace/xcuserdata/*
