@@ -8,9 +8,7 @@
 
 @synthesize category;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             category:(Category *)exerciseCategory
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil category:(Category *)exerciseCategory {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         self.category = exerciseCategory;
     }
@@ -18,14 +16,12 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [category release];
     [super dealloc];
 }
 
-- (void)showInfoDialog
-{
+- (void)showInfoDialog {
     InfoViewController *infoViewController = [[InfoViewController alloc]
                                               initWithNibName:@"InfoViewController"
                                               bundle:nil infoText:category.htmlDescription];
@@ -36,22 +32,12 @@
     [infoViewController release];
 }
 
-- (void)didDismissInfoDialog
-{
+- (void)didDismissInfoDialog {
     [self dismissModalViewControllerAnimated:NO];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 // TODO: Abstract common viewDidLoad() config (duplicated in RootViewController).
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Configure the navigation bar at the top.
@@ -76,68 +62,31 @@
     // Configure the table view.
     self.tableView.backgroundColor = UIColorFromHex(0x262b32);
     self.tableView.separatorColor = UIColorFromHex(0x262b32);
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section (the number of exercises in the category).
     return [category.exercises count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc]
+                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell.
@@ -145,14 +94,12 @@
     selectedBackground.backgroundColor = UIColorFromHex(0x3366CC);
     [cell setSelectedBackgroundView:selectedBackground];
     [[cell textLabel] setTextColor:UIColorFromHex(0xc3c3c3)];
-    [[cell textLabel] setText:[[category.exercises
-                                objectAtIndex:indexPath.row] description]];
+    [[cell textLabel] setText:[[category.exercises objectAtIndex:indexPath.row] description]];
 
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ExerciseIntroViewController *exerciseIntroViewController =
     [[ExerciseIntroViewController alloc] initWithNibName:@"ExerciseIntroViewController" bundle:nil
                                                 exercise:[category.exercises objectAtIndex:indexPath.row]];
