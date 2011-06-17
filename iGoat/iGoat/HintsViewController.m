@@ -5,27 +5,22 @@
 
 @synthesize exercise, nextButton, prevButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             exercise:(Exercise *)ex
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
     NSString *hintText = (NSString *)[ex.hints objectAtIndex:ex.hintIndex];
 
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil
-                              infoText:hintText])) {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil infoText:hintText])) {
         self.exercise = ex;
     }
     
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [self toggleButtons];
     [super viewDidLoad];
 }
 
-- (IBAction)loadNextHint:(id)sender
-{
+- (IBAction)loadNextHint:(id)sender {
     int idx = self.exercise.hintIndex;
 
     if (idx < self.exercise.totalHints - 1) {
@@ -35,8 +30,7 @@
     }
 }
 
-- (IBAction)loadPreviousHint:(id)sender
-{
+- (IBAction)loadPreviousHint:(id)sender {
     int idx = self.exercise.hintIndex;
     
     if (idx > 0) {
@@ -46,8 +40,7 @@
     }
 }
 
-- (void)toggleButtons
-{
+- (void)toggleButtons {
     int idx = self.exercise.hintIndex;
     int total = self.exercise.totalHints;
 
@@ -72,8 +65,7 @@
 }
 
 // TODO: This is kinda hacky.
-- (NSString *)formatAsHtml:(NSString *)text
-{
+- (NSString *)formatAsHtml:(NSString *)text {
     if ([text hasPrefix:@"<html>"]) {
         return text;
     } else {
@@ -84,14 +76,12 @@
     }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [exercise release];
     [nextButton release];
     [prevButton release];
