@@ -7,11 +7,11 @@
 
 @synthesize scrollView, exercise, rootExerciseController, activeField, restartButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             exercise:(Exercise *)ex
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
     if ((self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        // Reset the hint index on the exercise.
         ex.hintIndex = 0;
+
         self.exercise = ex;
         self.rootExerciseController = self;
         [self registerForKeyboardNotifications];
@@ -21,8 +21,8 @@
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             exercise:(Exercise *)ex rootExerciseController:(ExerciseViewController *)exerciseController
-{
+             exercise:(Exercise *)ex rootExerciseController:(ExerciseViewController *)exerciseController {
+
     if ((self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil exercise:ex])) {
         self.rootExerciseController = exerciseController;
     }
@@ -30,15 +30,13 @@
     return self;
 }
 
-- (void)restartExercise
-{
+- (void)restartExercise {
     if (self.rootExerciseController != self) {
         [self.navigationController popToViewController:self.rootExerciseController animated:YES];
     }
 }
 
-- (void)showHintsDialog
-{
+- (void)showHintsDialog {
     HintsViewController *hintsViewController = [[HintsViewController alloc]
                                                 initWithNibName:@"HintsViewController"
                                                 bundle:nil exercise:self.exercise];
@@ -49,8 +47,7 @@
     [hintsViewController release];
 }
 
-- (void)showSolutionDialog
-{
+- (void)showSolutionDialog {
     InfoViewController *infoViewController = [[InfoViewController alloc]
                                               initWithNibName:@"InfoViewController"
                                               bundle:nil infoText:self.exercise.htmlSolution];
@@ -61,8 +58,7 @@
     [infoViewController release];
 }
 
-- (void)didDismissInfoDialog
-{
+- (void)didDismissInfoDialog {
     [self dismissModalViewControllerAnimated:NO];
 }
 
@@ -74,13 +70,11 @@
     [alert release];
 }
 
-- (IBAction)textFieldReturn:(id)sender
-{
+- (IBAction)textFieldReturn:(id)sender {
     [sender resignFirstResponder];
 }
 
-- (IBAction)backgroundTouched:(id)sender
-{
+- (IBAction)backgroundTouched:(id)sender {
     for (UIView *view in [self.view subviews]) {
         if ([view isFirstResponder]) {
             [view resignFirstResponder];
@@ -90,8 +84,7 @@
 }
 
 // Make it known that we care about keyboard notifications.
-- (void)registerForKeyboardNotifications
-{
+- (void)registerForKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:)
                                                  name:UIKeyboardDidShowNotification object:nil];
     
@@ -100,8 +93,7 @@
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
-- (void)keyboardWasShown:(NSNotification*)notification
-{
+- (void)keyboardWasShown:(NSNotification*)notification {
     // Don't bother doing anything if this exercise doesn't have a scroll view.
     if (!scrollView) return;
 
@@ -126,8 +118,7 @@
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
-- (void)keyboardWillBeHidden:(NSNotification*)notification
-{
+- (void)keyboardWillBeHidden:(NSNotification*)notification {
     // Don't bother doing anything if this exercise doesn't have a scroll view.
     if (!scrollView) return;
 
@@ -135,8 +126,7 @@
     activeField = nil;
 }
 
-- (IBAction)textFieldDidBeginEditing:(id)sender
-{
+- (IBAction)textFieldDidBeginEditing:(id)sender {
     if (activeField) {
         activeField = (UITextField *)sender;
         [[NSNotificationCenter defaultCenter]
@@ -146,8 +136,7 @@
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Configure the navigation bar at the top.
@@ -179,15 +168,14 @@
     self.navigationController.toolbar.barStyle = UIBarStyleBlack;
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.scrollView = nil;
+    self.activeField = nil;
+    self.restartButton = nil;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [rootExerciseController release];
     [exercise release];
@@ -197,16 +185,7 @@
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
