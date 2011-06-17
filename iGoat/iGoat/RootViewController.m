@@ -5,8 +5,7 @@
 
 @implementation RootViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     // Show splash page on first launch (experimental still, KRvW).
@@ -46,8 +45,7 @@
     self.tableView.separatorColor = UIColorFromHex(0x262b32);
 }
 
-- (void)showInfoDialogWithContentFrom:(NSString *)filename
-{
+- (void)showInfoDialogWithContentFrom:(NSString *)filename {
     // Load the file as a string.
     NSError *error;
     NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:nil];
@@ -72,49 +70,24 @@
     [fileContentsAsString release];
 }
 
-- (void)showInfoDialog
-{
+- (void)showInfoDialog {
     [self showInfoDialogWithContentFrom:@"about.html"];
 }
 
-- (void)didDismissInfoDialog
-{
+- (void)didDismissInfoDialog {
     [self dismissModalViewControllerAnimated:NO];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [AssetStore.categories count];
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -129,14 +102,12 @@
     selectedBackground.backgroundColor = UIColorFromHex(0x3366CC);
     [cell setSelectedBackgroundView:selectedBackground];
     [[cell textLabel] setTextColor:UIColorFromHex(0xc3c3c3)];
-    [[cell textLabel] setText:[[AssetStore.categories
-                                objectAtIndex:indexPath.row] description]];
+    [[cell textLabel] setText:[[AssetStore.categories objectAtIndex:indexPath.row] description]];
 
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ExercisesViewController *exercisesViewController =
         [[ExercisesViewController alloc] initWithNibName:@"ExercisesViewController" bundle:nil
                                                 category:[AssetStore.categories
@@ -145,24 +116,6 @@
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:exercisesViewController animated:YES];
     [exercisesViewController release];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 @end
