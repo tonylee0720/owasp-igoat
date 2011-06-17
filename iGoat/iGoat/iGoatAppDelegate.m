@@ -7,8 +7,7 @@
 @synthesize navigationController = _navigationController;
 @synthesize assetStore;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Initialize all of the static asset data.
     assetStore = [[AssetStore alloc] init];
     
@@ -18,37 +17,31 @@
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
+- (void)applicationWillResignActive:(UIApplication *)application {
 
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
+- (void)applicationDidEnterBackground:(UIApplication *)application {
     // Send out a notification that we've been backgrounded.
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"didEnterBackground" object:nil userInfo:nil];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (void)applicationWillEnterForeground:(UIApplication *)application {
 
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
+- (void)applicationDidBecomeActive:(UIApplication *)application {
     // Send out a notification that we've become active (after having been backgrounded).
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"didBecomeActive" object:nil userInfo:nil];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application {
 
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_window release];
     [_navigationController release];
     [assetStore release];
