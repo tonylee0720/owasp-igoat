@@ -8,8 +8,7 @@
 
 @synthesize exercise, webView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         self.exercise = ex;
     }
@@ -17,23 +16,13 @@
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [exercise release];
     [webView release];
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     // Configure the navigation bar at the top.
@@ -73,18 +62,20 @@
     [baseURL release];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
+    self.exercise = nil;
+    self.webView = nil;
 }
 
-- (void)startExercise
-{
+- (void)startExercise {
+    // Load the initial view controller for this exercise by name.
     ExerciseViewController *controller = [[NSClassFromString(self.exercise.initialViewController) alloc]
                                           initWithNibName:self.exercise.initialViewController
                                           bundle:nil exercise:self.exercise];
 
     if (controller) {
+        // Push the view controller onto the navigation stack.
         [self.navigationController pushViewController:controller animated:YES];
         [controller release];
     } else {
@@ -94,11 +85,11 @@
                                initWithTitle:@"Snap!" message:@"Exercise not yet implemented."
                                delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
         [alert show];
+        [alert release];
     }
 }
 
-- (void)showInfoDialog
-{
+- (void)showInfoDialog {
     InfoViewController *infoViewController = [[InfoViewController alloc]
                                               initWithNibName:@"InfoViewController"
                                               bundle:nil infoText:exercise.htmlCredits];
@@ -109,14 +100,12 @@
     [infoViewController release];
 }
 
-- (void)didDismissInfoDialog
-{
+- (void)didDismissInfoDialog {
     [self dismissModalViewControllerAnimated:NO];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations.
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
