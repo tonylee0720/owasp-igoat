@@ -7,9 +7,7 @@
 @synthesize infoText;
 @synthesize delegate;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             infoText:(NSString *)text
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil infoText:(NSString *)text {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         self.infoText = text;
     }
@@ -17,43 +15,35 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self loadHtmlString:infoText];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.infoWebView = nil;
 }
 
-- (void)loadHtmlString:(NSString *)text
-{
+- (void)loadHtmlString:(NSString *)text {
     // Render the HTML string in the associated UIWebView.
     NSString *resourcePath = [[NSBundle mainBundle] resourcePath];
     NSURL *baseURL = [[NSURL alloc] initFileURLWithPath:resourcePath isDirectory:YES];
-    [infoWebView loadHTMLString:[self formatAsHtml:text] baseURL:baseURL];
-
+    [self.infoWebView loadHTMLString:[self formatAsHtml:text] baseURL:baseURL];
     [baseURL release];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)dismissDialog:(id)sender
-{
+- (IBAction)dismissDialog:(id)sender {
     [delegate didDismissInfoDialog];
 }
 
 // TODO: This is kinda hacky.
-- (NSString *)formatAsHtml:(NSString *)text
-{
+- (NSString *)formatAsHtml:(NSString *)text {
     if ([text hasPrefix:@"<html>"]) {
         return text;
     } else {
@@ -63,19 +53,10 @@
     }
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [infoWebView release];
     [infoText release];
     [super dealloc];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 @end
