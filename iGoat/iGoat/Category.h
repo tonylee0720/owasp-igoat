@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "Asset.h"
 
-@interface Category : Asset {
+@interface ExerciseCategory : Asset {
 
 }
 

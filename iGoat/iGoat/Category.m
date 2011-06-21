@@ -1,6 +1,6 @@
 #import "Category.h"
 
-@implementation Category
+@implementation ExerciseCategory
 
 @synthesize exercises, longDescription;
 

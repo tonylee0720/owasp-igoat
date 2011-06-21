@@ -8,7 +8,7 @@
 
 @synthesize category;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil category:(Category *)exerciseCategory {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil category:(ExerciseCategory *)exerciseCategory {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         self.category = exerciseCategory;
     }

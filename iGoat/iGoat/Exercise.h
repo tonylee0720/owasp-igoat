@@ -18,7 +18,7 @@ initialViewController:(NSString *)controllerName;
 @property (nonatomic) int hintIndex;
 @property (nonatomic) int totalHints;
 @property (nonatomic, retain) NSString *solution;
-@property (nonatomic, retain) Category *category;
+@property (nonatomic, retain) ExerciseCategory *category;
 @property (nonatomic, retain) NSString *initialViewController;
 
 @end

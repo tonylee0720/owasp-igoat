@@ -22,7 +22,7 @@
         categoryDict = [assets objectForKey:categoryName];
         exercisesArray = [categoryDict objectForKey:@"exercises"];
 
-        Category *category = [[Category alloc] initWithName:categoryName
+        ExerciseCategory *category = [[ExerciseCategory alloc] initWithName:categoryName
                                             longDescription:[categoryDict objectForKey:@"description"]];
 
         for (NSDictionary *exerciseDict in exercisesArray) {

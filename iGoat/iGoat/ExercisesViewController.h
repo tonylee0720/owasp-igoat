@@ -7,10 +7,10 @@
     
 }
 
-@property (nonatomic, retain) Category *category;
+@property (nonatomic, retain) ExerciseCategory *category;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             category:(Category *)exerciseCategory;
+             category:(ExerciseCategory *)exerciseCategory;
 
 @end
 
