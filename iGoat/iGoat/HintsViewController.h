@@ -47,9 +47,8 @@
 //
 // Getting Source
 //
-// The source for iGoat is maintained at <REPO>, a repository
-// for free software projects.
+// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
 //
-// For details, please see <URL>
+// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************
