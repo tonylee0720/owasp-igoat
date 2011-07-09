@@ -185,7 +185,7 @@
 					<string>Now, go verify the sensitive data in the database file.</string>
 				</array>
 				<key>initialViewController</key>
-				<string></string>
+				<string>LocalDataStorageExerciseController</string>
 				<key>name</key>
 				<string>Local Data Storage</string>
 				<key>solution</key>
@@ -272,7 +272,7 @@
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
 				<string>The purpose of this exercise is to demonstrate the danger of using an
-                    SQLite query that's been dynamically-generated from user input, which presents
+                    SQLite query that&apos;s been dynamically-generated from user input, which presents
                     an obvious SQL injection vector.
 
                     The exercise is designed to mimic the interface to a searchable article

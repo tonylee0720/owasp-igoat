@@ -44,6 +44,8 @@
 		14A6137913A53A1100830D15 /* RemoteAuthenticationExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A6137713A53A1100830D15 /* RemoteAuthenticationExerciseController.xib */; };
 		14A6137F13A6F6C100830D15 /* SQLInjectionExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6137D13A6F6C100830D15 /* SQLInjectionExerciseController.m */; };
 		14A6138013A6F6C100830D15 /* SQLInjectionExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A6137E13A6F6C100830D15 /* SQLInjectionExerciseController.xib */; };
+		14DB8EA113C8AD1B00D5672C /* LocalDataStorageExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DB8E9F13C8AD1B00D5672C /* LocalDataStorageExerciseController.m */; };
+		14DB8EA213C8AD1B00D5672C /* LocalDataStorageExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DB8EA013C8AD1B00D5672C /* LocalDataStorageExerciseController.xib */; };
 		14F8F54113775B8000F63E1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F8F54013775B8000F63E1F /* UIKit.framework */; };
 		14F8F54313775B8000F63E1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F8F54213775B8000F63E1F /* Foundation.framework */; };
 		14F8F54513775B8000F63E1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F8F54413775B8000F63E1F /* CoreGraphics.framework */; };
@@ -134,6 +136,9 @@
 		14A6137C13A6F6C100830D15 /* SQLInjectionExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLInjectionExerciseController.h; sourceTree = "<group>"; };
 		14A6137D13A6F6C100830D15 /* SQLInjectionExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLInjectionExerciseController.m; sourceTree = "<group>"; };
 		14A6137E13A6F6C100830D15 /* SQLInjectionExerciseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLInjectionExerciseController.xib; sourceTree = "<group>"; };
+		14DB8E9E13C8AD1B00D5672C /* LocalDataStorageExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataStorageExerciseController.h; sourceTree = "<group>"; };
+		14DB8E9F13C8AD1B00D5672C /* LocalDataStorageExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataStorageExerciseController.m; sourceTree = "<group>"; };
+		14DB8EA013C8AD1B00D5672C /* LocalDataStorageExerciseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalDataStorageExerciseController.xib; sourceTree = "<group>"; };
 		14F8F53C13775B8000F63E1F /* iGoat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGoat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F8F54013775B8000F63E1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14F8F54213775B8000F63E1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +208,7 @@
 		1436296D13915AB2007B57F2 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				14DB8E9D13C8ACBB00D5672C /* Local Data Storage */,
 				14A6137B13A6F6A100830D15 /* SQL Injection */,
 				14A6137313A539E800830D15 /* Authentication */,
 				14769F3D139EF9C20048D6FA /* Cut-and-Paste */,
@@ -300,6 +306,16 @@
 				1411443913A8441100594571 /* SQLInjectionArticlesViewController.xib */,
 			);
 			name = "SQL Injection";
+			sourceTree = "<group>";
+		};
+		14DB8E9D13C8ACBB00D5672C /* Local Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				14DB8E9E13C8AD1B00D5672C /* LocalDataStorageExerciseController.h */,
+				14DB8E9F13C8AD1B00D5672C /* LocalDataStorageExerciseController.m */,
+				14DB8EA013C8AD1B00D5672C /* LocalDataStorageExerciseController.xib */,
+			);
+			name = "Local Data Storage";
 			sourceTree = "<group>";
 		};
 		14F8F53113775B8000F63E1F = {
@@ -494,6 +510,7 @@
 				14A6138013A6F6C100830D15 /* SQLInjectionExerciseController.xib in Resources */,
 				1411443B13A8441100594571 /* SQLInjectionArticlesViewController.xib in Resources */,
 				1411443E13A8518400594571 /* articles.sqlite in Resources */,
+				14DB8EA213C8AD1B00D5672C /* LocalDataStorageExerciseController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +570,7 @@
 				14A6137813A53A1100830D15 /* RemoteAuthenticationExerciseController.m in Sources */,
 				14A6137F13A6F6C100830D15 /* SQLInjectionExerciseController.m in Sources */,
 				1411443A13A8441100594571 /* SQLInjectionArticlesViewController.m in Sources */,
+				14DB8EA113C8AD1B00D5672C /* LocalDataStorageExerciseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
