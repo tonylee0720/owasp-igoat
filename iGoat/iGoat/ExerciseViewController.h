@@ -17,6 +17,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
              exercise:(Exercise *)ex rootExerciseController:(ExerciseViewController *)exerciseController;
 - (void)restartExercise;
+- (NSString *)getPathForFilename:(NSString *)filename;
 - (void)showHintsDialog;
 - (void)showSolutionDialog;
 - (IBAction)textFieldReturn:(id)sender;

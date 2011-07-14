@@ -12,6 +12,7 @@
 @property (nonatomic, retain) IBOutlet UISwitch *credentialStorageSwitch;
 
 - (IBAction)submit:(id)sender;
+- (void)storeCredentialsForUsername:(NSString *)username withPassword:(NSString *)password;
 
 @end
 

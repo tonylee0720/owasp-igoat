@@ -36,6 +36,16 @@
     }
 }
 
+- (NSString *)getPathForFilename:(NSString *)filename {
+	// Get the path to the Documents directory belonging to this app.
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+	// Append the filename to get the full, absolute path.
+	NSString *fullPath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, filename];
+	return fullPath;
+}
+
 - (void)showHintsDialog {
     HintsViewController *hintsViewController = [[HintsViewController alloc]
                                                 initWithNibName:@"HintsViewController"
