@@ -5,7 +5,7 @@
 
 @implementation ExerciseViewController
 
-@synthesize scrollView, exercise, rootExerciseController, activeField, restartButton;
+@synthesize scrollView, exercise, rootExerciseController, activeField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
     if ((self = [self initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
@@ -44,6 +44,10 @@
 	// Append the filename to get the full, absolute path.
 	NSString *fullPath = [NSString stringWithFormat:@"%@/%@", documentsDirectory, filename];
 	return fullPath;
+}
+
+- (void)goHome {
+    
 }
 
 - (void)showHintsDialog {
@@ -150,9 +154,20 @@
     [super viewDidLoad];
 
     // Configure the navigation bar at the top.
-    self.navigationItem.title = self.exercise.name;
+    // self.navigationItem.title = self.exercise.name;
+    self.navigationItem.title = @"Exercise";
+    
+    UIBarButtonItem *homeButton = [[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Home" style:UIBarButtonItemStyleBordered
+                                    target:self action:@selector(goHome)] autorelease];
+
+    self.navigationItem.rightBarButtonItem = homeButton;
 
     // Configure the navigation toolbar at the bottom.
+    UIBarButtonItem *flexibleSpaceItem = [[[UIBarButtonItem alloc]
+                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                           target:nil action:nil] autorelease];
+
     UIBarButtonItem *hintsButton = [[[UIBarButtonItem alloc]
                                      initWithTitle:@"Hints" style:UIBarButtonItemStyleBordered
                                      target:self action:@selector(showHintsDialog)] autorelease];
@@ -161,18 +176,9 @@
                                      initWithTitle:@"Solution" style:UIBarButtonItemStyleBordered
                                      target:self action:@selector(showSolutionDialog)] autorelease];
 
-    UIBarButtonItem *flexibleSpaceItem = [[[UIBarButtonItem alloc]
-                                           initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                           target:nil action:nil] autorelease];
-
-    self.restartButton = [[UIBarButtonItem alloc]
-                      initWithTitle:@"Restart" style:UIBarButtonItemStyleBordered
-                      target:self action:@selector(restartExercise)];
-
     if (self.exercise.totalHints <= 0) hintsButton.enabled = NO;
     
-    self.toolbarItems = [NSArray arrayWithObjects:hintsButton, solutionButton, flexibleSpaceItem,
-                         restartButton, nil];
+    self.toolbarItems = [NSArray arrayWithObjects:hintsButton, flexibleSpaceItem, solutionButton, nil];
 
     self.navigationController.toolbarHidden = NO;
     self.navigationController.toolbar.barStyle = UIBarStyleBlack;
@@ -182,7 +188,6 @@
     [super viewDidUnload];
     self.scrollView = nil;
     self.activeField = nil;
-    self.restartButton = nil;
 }
 
 - (void)dealloc {
@@ -191,7 +196,6 @@
     [exercise release];
     [scrollView release];
     [activeField release];
-    [restartButton release];
     [super dealloc];
 }
 

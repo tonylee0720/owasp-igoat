@@ -55,14 +55,6 @@
     [super dealloc];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // You can't "restart" this exercise.
-    self.restartButton.enabled = NO;
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];

@@ -27,16 +27,22 @@
 
     // Configure the navigation bar at the top.
     self.navigationItem.title = @"Introduction";
+
+    UIBarButtonItem *homeButton = [[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Home" style:UIBarButtonItemStyleBordered
+                                    target:self action:@selector(goHome)] autorelease];
+    
+    self.navigationItem.rightBarButtonItem = homeButton;
     
     // Configure the navigation toolbar at the bottom.
+    UIBarButtonItem *flexibleSpaceItem = [[UIBarButtonItem alloc]
+                                          initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                          target:nil action:nil];
+
     UIBarButtonItem *creditsButton = [[UIBarButtonItem alloc]
                                       initWithTitle:@"Credits"
                                       style:UIBarButtonItemStyleBordered
                                       target:self action:@selector(showInfoDialog)];
-
-    UIBarButtonItem *flexibleSpaceItem = [[UIBarButtonItem alloc]
-                                          initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                          target:nil action:nil];
 
     UIBarButtonItem *startButton = [[UIBarButtonItem alloc]
                                     initWithTitle:@"Start"

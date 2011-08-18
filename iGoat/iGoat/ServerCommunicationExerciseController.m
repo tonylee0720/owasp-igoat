@@ -98,13 +98,6 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
     [super dealloc];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // You can't "restart" this exercise.
-    self.restartButton.enabled = NO;
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     self.firstNameField = nil;

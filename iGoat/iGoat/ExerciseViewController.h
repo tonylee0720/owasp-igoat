@@ -9,7 +9,6 @@
 @property (nonatomic, retain) Exercise *exercise;
 @property (nonatomic, retain) ExerciseViewController *rootExerciseController;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *restartButton;
 @property (nonatomic, retain) UITextField *activeField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

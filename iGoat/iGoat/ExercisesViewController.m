@@ -42,6 +42,12 @@
 
     // Configure the navigation bar at the top.
     self.navigationItem.title = @"Exercises";
+
+    UIBarButtonItem *homeButton = [[[UIBarButtonItem alloc]
+                                    initWithTitle:@"Home" style:UIBarButtonItemStyleBordered
+                                    target:self action:@selector(goHome)] autorelease];
+    
+    self.navigationItem.rightBarButtonItem = homeButton;
     
     // Configure the navigation toolbar at the bottom.
     UIBarButtonItem *flexibleSpaceItem = [[[UIBarButtonItem alloc]

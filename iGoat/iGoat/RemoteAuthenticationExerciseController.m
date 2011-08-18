@@ -63,13 +63,6 @@ NSString * const TOKEN_URL = @"http://localhost:8080/igoat/token?username=%@&pas
     [super dealloc];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    // You can't "restart" this exercise.
-    self.restartButton.enabled = NO;
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     self.usernameField = nil;
