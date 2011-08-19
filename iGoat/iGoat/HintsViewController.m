@@ -1,5 +1,6 @@
 #import "HintsViewController.h"
 #import "Exercise.h"
+#import "Utils.h"
 
 @implementation HintsViewController
 
@@ -31,6 +32,8 @@
     // Set the total number of pages (total number of hints).
     self.pageControl.numberOfPages = self.exercise.totalHints;
     self.pageControl.currentPage = 0;
+
+    self.pageControl.backgroundColor = UIColorFromHex(0x262b32);
 
     [super viewDidLoad];
 }
