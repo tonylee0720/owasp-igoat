@@ -70,6 +70,10 @@
     self.tableView.separatorColor = UIColorFromHex(0x262b32);
 }
 
+- (void)goHome {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

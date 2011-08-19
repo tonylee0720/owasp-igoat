@@ -74,6 +74,10 @@
     self.webView = nil;
 }
 
+- (void)goHome {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)startExercise {
     // Load the initial view controller for this exercise by name.
     ExerciseViewController *controller = [[NSClassFromString(self.exercise.initialViewController) alloc]

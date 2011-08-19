@@ -11,6 +11,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
              category:(ExerciseCategory *)exerciseCategory;
+- (void)goHome;
 
 @end
 

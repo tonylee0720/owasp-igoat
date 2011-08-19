@@ -47,7 +47,7 @@
 }
 
 - (void)goHome {
-    
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (void)showHintsDialog {
