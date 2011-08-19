@@ -178,7 +178,7 @@
 				<key>hints</key>
 				<array>
 					<string> SQLite is a built-in database that iOS apps can make use
-                        of. By default, the *.db files are stored in plaintext on the iOS
+                        of. By default, the database files are stored in plaintext on the iOS
                         device.</string>
 					<string>Use the app to store some sensitive data into a SQLite
                         database.</string>
@@ -201,9 +201,9 @@
                     or iPhone Explorer (if using an iOS device) and explore the
                     ~/Documents folder where iGoat is stored.
                     
-                    You should find a database file called storage.db. Use a tool such as
-                    hexdump to view this binary file, and look for the sensitive data. You
-                    should find a plaintext string containing the information.
+                    You should find a database file called credentials.sqlite. Use a tool
+                    such as hexdump to view this binary file, and look for the sensitive data.
+                    You should find a plaintext string containing the information.
                     
                     To remediate the exercise, we use a special build of SQLite called
                     SQLcipher. It uses OpenSSL to encrypt the database file using AES-256
