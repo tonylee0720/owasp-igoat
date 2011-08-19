@@ -29,8 +29,8 @@
 		sqlite3_stmt *compiledStmt;
         
 		// Create the table if it doesn't exist.
-		const char *createStmt =
-        "CREATE TABLE IF NOT EXISTS creds (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT);";
+		const char *createStmt = 
+            "CREATE TABLE IF NOT EXISTS creds (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT);";
 		sqlite3_exec(credentialsDB, createStmt, NULL, NULL, NULL);
 		
 		// Check to see if the user exists; update if yes, add if no.
@@ -91,6 +91,26 @@
     self.credentialStorageSwitch = nil;
     [super viewDidUnload];
 }
+
+//******************************************************************************
+// SOLUTION
+//
+// First, the existing, unencrypted "credentials.sqlite" file must be deleted
+// either from the device or the simulator filesystem. If this file isn't
+// deleted, it won't be encrypted after implementing the solution. In other
+// words, you can't encrypt an existing, unencrypted SQLite database.
+//
+// Next, immediately after opening the database and before executing the create
+// table statement, make the following call to "key" the database (on line 30).
+//
+// sqlite3_exec(credentialsDB, "PRAGMA key = 'secretKey!'", NULL, NULL, NULL);
+//
+// Obviously it's not a good idea to hard-code the secret key. Rather, it should
+// be acquired out-of-band (user input, for example).
+//
+// That's pretty much it. Notice that the "credentials.sqlite" file is now
+// encrypted and unreadable.
+//******************************************************************************
 
 @end
 

@@ -45,7 +45,7 @@
                                       target:self action:@selector(showInfoDialog)];
 
     UIBarButtonItem *startButton = [[UIBarButtonItem alloc]
-                                    initWithTitle:@"Start"
+                                    initWithTitle:@"Start Exercise"
                                     style:UIBarButtonItemStyleBordered
                                     target:self action:@selector(startExercise)];
 
