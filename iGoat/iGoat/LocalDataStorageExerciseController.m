@@ -95,13 +95,19 @@
 //******************************************************************************
 // SOLUTION
 //
-// First, the existing, unencrypted "credentials.sqlite" file must be deleted
+// First, pull in the necessary external libraries by following the instructions
+// outlined in the HOWTO below.
+//
+// TODO [KRvW]: Add URL to SQLCipher HOWTO wiki page.
+//
+// Next, the existing, unencrypted "credentials.sqlite" file must be deleted
 // either from the device or the simulator filesystem. If this file isn't
 // deleted, it won't be encrypted after implementing the solution. In other
 // words, you can't encrypt an existing, unencrypted SQLite database.
 //
-// Next, immediately after opening the database and before executing the create
-// table statement, make the following call to "key" the database (on line 30).
+// Finally, immediately after opening the database and before executing the
+// create table statement, make the following call to "key" the database (on
+// line 30).
 //
 // sqlite3_exec(credentialsDB, "PRAGMA key = 'secretKey!'", NULL, NULL, NULL);
 //
