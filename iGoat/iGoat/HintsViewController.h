@@ -12,6 +12,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
              exercise:(Exercise *)ex;
+- (void)pageDidChangeAction;
 - (void)loadNextHint;
 - (void)loadPreviousHint;
 

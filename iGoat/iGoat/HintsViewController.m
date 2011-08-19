@@ -29,13 +29,29 @@
     [[self view] addGestureRecognizer:recognizer];
     [recognizer release];
 
-    // Set the total number of pages (total number of hints).
+    // Configure the page controller.
     self.pageControl.numberOfPages = self.exercise.totalHints;
     self.pageControl.currentPage = 0;
-
+    self.pageControl.defersCurrentPageDisplay = YES;
     self.pageControl.backgroundColor = UIColorFromHex(0x262b32);
 
+    [self.pageControl addTarget:self action:@selector(pageDidChangeAction)
+               forControlEvents:UIControlEventValueChanged];
+
     [super viewDidLoad];
+}
+
+- (void)pageDidChangeAction {
+    int page = self.pageControl.currentPage;
+    int idx = self.exercise.hintIndex;
+
+    [self.pageControl updateCurrentPageDisplay];
+
+    if (page > idx) {
+        [self loadNextHint];
+    } else if (page < idx) {
+        [self loadPreviousHint];
+    }
 }
 
 - (void)loadNextHint {
