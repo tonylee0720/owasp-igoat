@@ -7,14 +7,13 @@
 }
 
 @property (nonatomic, retain) Exercise *exercise;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *nextButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *prevButton;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet UIPageControl* pageControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
              exercise:(Exercise *)ex;
-- (IBAction)loadNextHint:(id)sender;
-- (IBAction)loadPreviousHint:(id)sender;
-- (void)toggleButtons;
+- (void)loadNextHint;
+- (void)loadPreviousHint;
 
 @end
 

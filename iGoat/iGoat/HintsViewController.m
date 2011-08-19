@@ -3,7 +3,7 @@
 
 @implementation HintsViewController
 
-@synthesize exercise, nextButton, prevButton;
+@synthesize exercise, scrollView, pageControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
     NSString *hintText = (NSString *)[ex.hints objectAtIndex:ex.hintIndex];
@@ -16,51 +16,42 @@
 }
 
 - (void)viewDidLoad {
-    [self toggleButtons];
+    // Configure the swipe gesture recognizers.
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(loadPreviousHint)];
+    [recognizer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:recognizer];
+    [recognizer release];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(loadNextHint)];
+    [recognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [[self view] addGestureRecognizer:recognizer];
+    [recognizer release];
+
+    // Set the total number of pages (total number of hints).
+    self.pageControl.numberOfPages = self.exercise.totalHints;
+    self.pageControl.currentPage = 0;
+
     [super viewDidLoad];
 }
 
-- (IBAction)loadNextHint:(id)sender {
-    int idx = self.exercise.hintIndex;
+- (void)loadNextHint {
+    int idx = self.exercise.hintIndex + 1;
 
-    if (idx < self.exercise.totalHints - 1) {
-        self.exercise.hintIndex = idx + 1;
-        [self toggleButtons];
-        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx + 1)]];
+    if (idx < self.exercise.totalHints) {
+        self.exercise.hintIndex = idx;
+        self.pageControl.currentPage = idx;
+        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
     }
 }
 
-- (IBAction)loadPreviousHint:(id)sender {
-    int idx = self.exercise.hintIndex;
+- (void)loadPreviousHint {
+    int idx = self.exercise.hintIndex - 1;
     
-    if (idx > 0) {
-        self.exercise.hintIndex = idx - 1;
-        [self toggleButtons];
-        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx - 1)]];
-    }
-}
-
-- (void)toggleButtons {
-    int idx = self.exercise.hintIndex;
-    int total = self.exercise.totalHints;
-
-    if (idx < total - 1) {
-        self.nextButton.enabled = YES;
-
-        if (idx == 0) {
-            self.prevButton.enabled = NO;
-        } else {
-            self.prevButton.enabled = YES;
-        }
-
-    } else if (total == 0) {
-        // Should never get here because the hints controller shouldn't be instantiated if there
-        // are no hints, but just in case...
-        self.nextButton.enabled = NO;
-        self.prevButton.enabled = NO;
-    } else {
-        self.nextButton.enabled = NO;
-        self.prevButton.enabled = YES;
+    if (idx >= 0) {
+        self.exercise.hintIndex = idx;
+        self.pageControl.currentPage = idx;
+        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
     }
 }
 
@@ -83,8 +74,8 @@
 
 - (void)dealloc {
     [exercise release];
-    [nextButton release];
-    [prevButton release];
+    [scrollView release];
+    [pageControl release];
     [super dealloc];
 }
 
