@@ -5,3 +5,5 @@ syntax: glob
 *.swo
 iGoat/iGoat.xcodeproj/xcuserdata/*
 iGoat/iGoat.xcodeproj/project.xcworkspace/xcuserdata/*
+lib/openssl-xcode/openssl.xcodeproj/xcuserdata/*
+lib/sqlcipher/sqlcipher.xcodeproj/xcuserdata/*
