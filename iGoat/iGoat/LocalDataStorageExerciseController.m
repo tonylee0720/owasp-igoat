@@ -98,7 +98,7 @@
 // First, pull in the necessary external libraries by following the instructions
 // outlined in the HOWTO below.
 //
-// TODO [KRvW]: Add URL to SQLCipher HOWTO wiki page.
+// http://code.google.com/p/owasp-igoat/wiki/BuildingiGoatWithSQLcipher
 //
 // Next, the existing, unencrypted "credentials.sqlite" file must be deleted
 // either from the device or the simulator filesystem. If this file isn't
