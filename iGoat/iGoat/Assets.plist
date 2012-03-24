@@ -218,6 +218,35 @@
                     improved?
                 </string>
 			</dict>
+			<dict>
+				<key>creditsFile</key>
+				<string>mansi.html</string>
+				<key>description</key>
+				<string>In this exercise, you&apos;ll exploit an app that stores sensitive data in cleartext on an iOS device. 
+
+In this lesson,  user&apos;s credentials are stored in &quot;User Defaults&quot;. Your task is to locate that sensitive data on your iPhone/Simulator.</string>
+				<key>hints</key>
+				<array>
+					<string>  NSUserDefaults stores information in plist files, unencrypted on your iPhone/iOS Simulator.</string>
+					<string>Enter your credentials and let it &quot;Remember&quot; it.</string>
+					<string>Now, verify your credentials stored in Settings App. 
+
+This information is also stored in:
+
+                        ~/Library/Application Support/iPhone Simulator/&lt;{version}&gt;/Applications
+                        &lt;{Bundle ID}&gt;/Library/Preferences/com.krvw.iGoat.plist</string>
+				</array>
+				<key>initialViewController</key>
+				<string>KeychainExerciseViewController</string>
+				<key>name</key>
+				<string>Keychain Usage</string>
+				<key>solution</key>
+				<string>It can be easily verified in this exercise, that storing sensitive data in a plist (in this case User Defaults), is not a safe way since data is stored in clear text.
+
+It is recommended by Apple to use the keychain on iPhone to store passwords and other sensitive data (such as digital certs, cookies, sftp accounts, instant messaging accounts etc) that can be used to log into secure web sites.
+
+Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&quot;. This function uses  &quot;SecItemAdd&quot;, &quot;SecItemCopyMatch&quot; and &quot;SecItemUpdate&quot; for adding, retrieving and updating items in an app&apos;s keychain.</string>
+			</dict>
 		</array>
 	</dict>
 	<key>Data Protection (Transit)</key>
@@ -311,6 +340,30 @@
                     using dynamic strings for your query, you will need to use a
                     parameterized query API.
                 </string>
+			</dict>
+		</array>
+	</dict>
+	<key>Secure Communication</key>
+	<dict>
+		<key>description</key>
+		<string>In this exercise category, secured communication over https.These would include various intricacies of having a secured communication from within an iOS App. Exercises in this category, using CA signed certificates for secured communication etc.</string>
+		<key>exercises</key>
+		<array>
+			<dict>
+				<key>creditsFile</key>
+				<string>KRvWAssociates.html</string>
+				<key>description</key>
+				<string>The purpose of this exercise is to have a secured communication using CA signed certificates</string>
+				<key>hints</key>
+				<array>
+					<string>Make sure SSL is enabled</string>
+				</array>
+				<key>initialViewController</key>
+				<string>SSLCertificateExerciseViewController</string>
+				<key>name</key>
+				<string>SSL Certificate Comm</string>
+				<key>solution</key>
+				<string>SSL Certs are being used</string>
 			</dict>
 		</array>
 	</dict>
