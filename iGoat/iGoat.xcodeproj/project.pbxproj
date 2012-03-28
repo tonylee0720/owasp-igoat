@@ -63,10 +63,11 @@
 		14F8F57013775B8000F63E1F /* iGoatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F56F13775B8000F63E1F /* iGoatTests.m */; };
 		14F8F5801377758B00F63E1F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F57E1377758B00F63E1F /* InfoViewController.m */; };
 		14F8F5811377758B00F63E1F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F8F57F1377758B00F63E1F /* InfoViewController.xib */; };
+		3A37E7DE1522A04600D22678 /* KeychainExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */; };
+		3A37E7DF1522A04600D22678 /* KeychainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */; };
+		3A37E7E11522A0ED00D22678 /* mansi.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7E01522A0ED00D22678 /* mansi.html */; };
 		3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C2DF151D72020050CBAB /* Settings.bundle */; };
 		3AB0740E151D6E5B000E2A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0740D151D6E5B000E2A2C /* Security.framework */; };
-		3AB0741A151D6F03000E2A2C /* KeychainExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB07418151D6F03000E2A2C /* KeychainExerciseViewController.m */; };
-		3AB0741B151D6F03000E2A2C /* KeychainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB07419151D6F03000E2A2C /* KeychainExerciseViewController.xib */; };
 		77F3364A13994FA500527BA5 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 77F3364913994FA500527BA5 /* splash.html */; };
 /* End PBXBuildFile section */
 
@@ -166,11 +167,12 @@
 		14F8F57D1377758B00F63E1F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		14F8F57E1377758B00F63E1F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		14F8F57F1377758B00F63E1F /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		3A37E7DB1522A04600D22678 /* KeychainExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainExerciseViewController.h; sourceTree = "<group>"; };
+		3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainExerciseViewController.m; sourceTree = "<group>"; };
+		3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeychainExerciseViewController.xib; sourceTree = "<group>"; };
+		3A37E7E01522A0ED00D22678 /* mansi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mansi.html; sourceTree = "<group>"; };
 		3AA4C2DF151D72020050CBAB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3AB0740D151D6E5B000E2A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3AB07417151D6F03000E2A2C /* KeychainExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainExerciseViewController.h; path = "../../../owasp-igoat-1.1/iGoat/iGoat/KeychainExerciseViewController.h"; sourceTree = "<group>"; };
-		3AB07418151D6F03000E2A2C /* KeychainExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainExerciseViewController.m; path = "../../../owasp-igoat-1.1/iGoat/iGoat/KeychainExerciseViewController.m"; sourceTree = "<group>"; };
-		3AB07419151D6F03000E2A2C /* KeychainExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KeychainExerciseViewController.xib; path = "../../../owasp-igoat-1.1/iGoat/iGoat/KeychainExerciseViewController.xib"; sourceTree = "<group>"; };
 		77F3364913994FA500527BA5 /* splash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = splash.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,6 +273,7 @@
 				1436296713910C82007B57F2 /* ExerciseIntroViewController.xib */,
 				140D704A1389968500A778A3 /* ExercisesViewController.xib */,
 				14F8F55813775B8000F63E1F /* RootViewController.xib */,
+				3A37E7E01522A0ED00D22678 /* mansi.html */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -434,9 +437,9 @@
 		3AB07416151D6EE7000E2A2C /* Keychain Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				3AB07417151D6F03000E2A2C /* KeychainExerciseViewController.h */,
-				3AB07418151D6F03000E2A2C /* KeychainExerciseViewController.m */,
-				3AB07419151D6F03000E2A2C /* KeychainExerciseViewController.xib */,
+				3A37E7DB1522A04600D22678 /* KeychainExerciseViewController.h */,
+				3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */,
+				3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */,
 			);
 			name = "Keychain Exercise";
 			sourceTree = "<group>";
@@ -534,8 +537,9 @@
 				1411443B13A8441100594571 /* SQLInjectionArticlesViewController.xib in Resources */,
 				1411443E13A8518400594571 /* articles.sqlite in Resources */,
 				14DB8EA213C8AD1B00D5672C /* LocalDataStorageExerciseController.xib in Resources */,
-				3AB0741B151D6F03000E2A2C /* KeychainExerciseViewController.xib in Resources */,
 				3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */,
+				3A37E7DF1522A04600D22678 /* KeychainExerciseViewController.xib in Resources */,
+				3A37E7E11522A0ED00D22678 /* mansi.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +600,7 @@
 				14A6137F13A6F6C100830D15 /* SQLInjectionExerciseController.m in Sources */,
 				1411443A13A8441100594571 /* SQLInjectionArticlesViewController.m in Sources */,
 				14DB8EA113C8AD1B00D5672C /* LocalDataStorageExerciseController.m in Sources */,
-				3AB0741A151D6F03000E2A2C /* KeychainExerciseViewController.m in Sources */,
+				3A37E7DE1522A04600D22678 /* KeychainExerciseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

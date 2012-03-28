@@ -343,29 +343,5 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 			</dict>
 		</array>
 	</dict>
-	<key>Secure Communication</key>
-	<dict>
-		<key>description</key>
-		<string>In this exercise category, secured communication over https.These would include various intricacies of having a secured communication from within an iOS App. Exercises in this category, using CA signed certificates for secured communication etc.</string>
-		<key>exercises</key>
-		<array>
-			<dict>
-				<key>creditsFile</key>
-				<string>KRvWAssociates.html</string>
-				<key>description</key>
-				<string>The purpose of this exercise is to have a secured communication using CA signed certificates</string>
-				<key>hints</key>
-				<array>
-					<string>Make sure SSL is enabled</string>
-				</array>
-				<key>initialViewController</key>
-				<string>SSLCertificateExerciseViewController</string>
-				<key>name</key>
-				<string>SSL Certificate Comm</string>
-				<key>solution</key>
-				<string>SSL Certs are being used</string>
-			</dict>
-		</array>
-	</dict>
 </dict>
 </plist>

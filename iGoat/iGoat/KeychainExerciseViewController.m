@@ -16,43 +16,7 @@ NSString *alertMessage ;
 
 
 
--(IBAction)storeButtonPressed:(id)sender
-    {
-       
-   NSLog(@"In storeButtonPressed");
-   
-    [userName setText:userName.text];
-    [password setText:password.text];
-    
-    NSLog(@"Username is %@ and password is %@ and remember me is %d", self.userName.text, self.password.text, self.rememberMe.on);
-    
-    if(self.rememberMe.on) {
-        
-        // Stores/Updates credentials in NSUserDefaults
-        [self storeCredentialsInSettingsApp];
-       
-/*
- * SOLUTION
- * Uncomment the method call below to store crediatials in Keychain.
- * Don't forget to comment above function call to store credentials in NSUserDefaults.
- */
-       
-     //   [self storeCredentialsInKeychain];
-    }
-    else
-    {
-        alertMessage = @"Not to be Remembered" ;
-    }
-        
-    UIAlertView *alert = [[UIAlertView alloc]
-                        initWithTitle:@"Password"
-                        message:alertMessage
-                        delegate: nil
-                        cancelButtonTitle:@"Cancel"
-                        otherButtonTitles:@"OK",nil
-                        ];
-    [alert show]; 
-}
+
 
 - (void) storeCredentialsInSettingsApp
 {
@@ -97,7 +61,7 @@ NSString *alertMessage ;
         
         // encoded passsword.
         NSData *encodePassword = [NSData dataWithData:(NSData *)dataFromKeyChain];
-
+        
         if(results == errSecSuccess)
         {
             
@@ -107,18 +71,22 @@ NSString *alertMessage ;
             
             NSMutableDictionary *updateQuery = [NSMutableDictionary dictionary];
             
-           //  Setting up updateQuery dictionary to query existing keychain entries.
+            //  Setting up updateQuery dictionary to query existing keychain entries.
             [updateQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
             [updateQuery setObject: self.userName.text forKey:(id)kSecAttrAccount];
             
-
-           // Making dictionary with information to update "SecItemUpdate" ready. It needed both updateQuery and storeCredentials dictionary to be similar.     
-            [storeCredentials removeObjectForKey:kSecClass];
-            [storeCredentials removeObjectForKey:kSecMatchLimit];
-            [storeCredentials removeObjectForKey:kSecReturnData];
+            
+            // Making dictionary with information to update "SecItemUpdate" ready. Its needed both updateQuery and tempUpdateQuery dictionaries to be similar. Could have re-used storeCredentials dictionary, but was leading to compile time warnings, while removing some objects.      
+           
+            NSMutableDictionary *tempUpdateQuery = [NSMutableDictionary dictionary];
+            
+            [tempUpdateQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+            [tempUpdateQuery setObject:[self.password.text dataUsingEncoding:NSUTF8StringEncoding] forKey:(id)kSecValueData];
+            [tempUpdateQuery setObject:self.userName.text forKey:(id)kSecAttrAccount];
+            [tempUpdateQuery setObject:(id)kSecAttrAccessibleWhenUnlocked forKey:(id)kSecAttrAccessible];
             
             results = SecItemUpdate((CFDictionaryRef) updateQuery,
-                                    (CFDictionaryRef) storeCredentials);
+                                    (CFDictionaryRef) tempUpdateQuery);
             
             
             alertMessage = @"updated in keychain";
@@ -140,6 +108,52 @@ NSString *alertMessage ;
     }
 }
 
+-(IBAction)storeButtonPressed:(id)sender
+{
+    
+    NSLog(@"In storeButtonPressed");
+    
+    [userName setText:userName.text];
+    [password setText:password.text];
+    
+    NSLog(@"Username is %@ and password is %@ and remember me is %d", self.userName.text, self.password.text, self.rememberMe.on);
+    
+    if(self.rememberMe.on) {
+        
+        // Stores/Updates credentials in NSUserDefaults
+       // [self storeCredentialsInSettingsApp];
+        
+/*
+  SOLUTION
+  The problem lies in the use of NSUserDefaults to store credentials in function "storeCredentialsInSettingsApp". This causes the credentials to be stored in plaintext as we have seen.
+ 
+  Instead of using this method, use iOS's Keychain to store credentials, which stores the credentials data into a keychain entry, where it is relatively safe from casual attacker. This can be achieved by simply uncommenting call to function "storeCredentialsInKeychain" below. Don't forget to comment out call to function "storeCredentialsInSettingsApp" above. 
+ 
+  Note: iOS gives an application access to only its own keychain items and does not have access to any other application’s items. However since iOS 4, keychain items can be shared among different applications by using access groups. Due to this feature, keychain is not stored inside an application's sandbox. Thus, when we delete (uninstall) an application from an iOS device, its corresponding keychain entries are not deleted. Also, its is backed up in iTunes backs.
+ 
+  Keychain is encrypted using device's Unique identifier (UID), which is unique for each and every device. If an attacker gets hold of UID of a particular backup (not very difficult to get it from the device), he can retrieve all keychain data. 
+ 
+ 
+  Although keychain data is encrypted, we are still placing user's sensitive data in plaintext into an encrypted data store. Due to above factors and depending on how we use this data, we may want to further protect that data by hashing(encrypting) it prior to storing it in keychain.
+ */
+        
+            // Stores/Updates data in Keychain
+           [self storeCredentialsInKeychain];
+    }
+    else
+    {
+        alertMessage = @"Not to be Remembered" ;
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Password"
+                          message:alertMessage
+                          delegate: nil
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"OK",nil
+                          ];
+    [alert show]; 
+}
 
 @end
 
