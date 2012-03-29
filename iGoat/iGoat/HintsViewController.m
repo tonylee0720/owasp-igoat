@@ -81,7 +81,7 @@
     } else {
         return [NSString stringWithFormat:@"<html><head>"
                 "<link href=\"igoat.css\" rel=\"stylesheet\" type=\"text/css\">"
-                "<head><body<h2>%@ (%d/%d)</h2>%@</body></html>",
+                "<head><body><h2>%@ (%d/%d)</h2>%@</body></html>",
                 self.exercise.name, (self.exercise.hintIndex + 1), self.exercise.totalHints, text];
     }
 }
