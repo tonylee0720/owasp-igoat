@@ -29,6 +29,9 @@
 		1436298E13947F51007B57F2 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1436298913947F51007B57F2 /* SBJsonWriter.m */; };
 		143EB4CF1378C91100475E3B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 143EB4CE1378C91100475E3B /* Icon.png */; };
 		143EB4D11378C91C00475E3B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143EB4D01378C91C00475E3B /* Icon@2x.png */; };
+		1440E367151E653B00C13DB7 /* KeychainExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1440E365151E653B00C13DB7 /* KeychainExerciseViewController.m */; };
+		1440E368151E653B00C13DB7 /* KeychainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1440E366151E653B00C13DB7 /* KeychainExerciseViewController.xib */; };
+		1440E36A151E655600C13DB7 /* mansi.html in Resources */ = {isa = PBXBuildFile; fileRef = 1440E369151E655600C13DB7 /* mansi.html */; };
 		14769F47139EFA190048D6FA /* CutAndPasteExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14769F45139EFA190048D6FA /* CutAndPasteExerciseController.m */; };
 		14769F48139EFA190048D6FA /* CutAndPasteExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14769F46139EFA190048D6FA /* CutAndPasteExerciseController.xib */; };
 		148398921389EFD700F9558A /* AssetStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 148398911389EFD700F9558A /* AssetStore.m */; };
@@ -63,9 +66,6 @@
 		14F8F57013775B8000F63E1F /* iGoatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F56F13775B8000F63E1F /* iGoatTests.m */; };
 		14F8F5801377758B00F63E1F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F57E1377758B00F63E1F /* InfoViewController.m */; };
 		14F8F5811377758B00F63E1F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F8F57F1377758B00F63E1F /* InfoViewController.xib */; };
-		3A37E7DE1522A04600D22678 /* KeychainExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */; };
-		3A37E7DF1522A04600D22678 /* KeychainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */; };
-		3A37E7E11522A0ED00D22678 /* mansi.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7E01522A0ED00D22678 /* mansi.html */; };
 		3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C2DF151D72020050CBAB /* Settings.bundle */; };
 		3AB0740E151D6E5B000E2A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0740D151D6E5B000E2A2C /* Security.framework */; };
 		77F3364A13994FA500527BA5 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 77F3364913994FA500527BA5 /* splash.html */; };
@@ -118,6 +118,10 @@
 		1436298913947F51007B57F2 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		143EB4CE1378C91100475E3B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		143EB4D01378C91C00475E3B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		1440E364151E653B00C13DB7 /* KeychainExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainExerciseViewController.h; sourceTree = "<group>"; };
+		1440E365151E653B00C13DB7 /* KeychainExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainExerciseViewController.m; sourceTree = "<group>"; };
+		1440E366151E653B00C13DB7 /* KeychainExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeychainExerciseViewController.xib; sourceTree = "<group>"; };
+		1440E369151E655600C13DB7 /* mansi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mansi.html; sourceTree = "<group>"; };
 		14769F44139EFA190048D6FA /* CutAndPasteExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutAndPasteExerciseController.h; sourceTree = "<group>"; };
 		14769F45139EFA190048D6FA /* CutAndPasteExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutAndPasteExerciseController.m; sourceTree = "<group>"; };
 		14769F46139EFA190048D6FA /* CutAndPasteExerciseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CutAndPasteExerciseController.xib; sourceTree = "<group>"; };
@@ -167,9 +171,6 @@
 		14F8F57D1377758B00F63E1F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		14F8F57E1377758B00F63E1F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		14F8F57F1377758B00F63E1F /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
-		3A37E7DB1522A04600D22678 /* KeychainExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainExerciseViewController.h; sourceTree = "<group>"; };
-		3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainExerciseViewController.m; sourceTree = "<group>"; };
-		3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeychainExerciseViewController.xib; sourceTree = "<group>"; };
 		3A37E7E01522A0ED00D22678 /* mansi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mansi.html; sourceTree = "<group>"; };
 		3AA4C2DF151D72020050CBAB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3AB0740D151D6E5B000E2A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -262,6 +263,7 @@
 		143EB4B91378A8F300475E3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1440E369151E655600C13DB7 /* mansi.html */,
 				1483989D138DEE0D00F9558A /* Assets.plist */,
 				14A27D15137B70A000D669EC /* igoat.css */,
 				14A27D17137B70B100D669EC /* about.html */,
@@ -437,9 +439,9 @@
 		3AB07416151D6EE7000E2A2C /* Keychain Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				3A37E7DB1522A04600D22678 /* KeychainExerciseViewController.h */,
-				3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */,
-				3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */,
+				1440E364151E653B00C13DB7 /* KeychainExerciseViewController.h */,
+				1440E365151E653B00C13DB7 /* KeychainExerciseViewController.m */,
+				1440E366151E653B00C13DB7 /* KeychainExerciseViewController.xib */,
 			);
 			name = "Keychain Exercise";
 			sourceTree = "<group>";
@@ -538,8 +540,8 @@
 				1411443E13A8518400594571 /* articles.sqlite in Resources */,
 				14DB8EA213C8AD1B00D5672C /* LocalDataStorageExerciseController.xib in Resources */,
 				3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */,
-				3A37E7DF1522A04600D22678 /* KeychainExerciseViewController.xib in Resources */,
-				3A37E7E11522A0ED00D22678 /* mansi.html in Resources */,
+				1440E368151E653B00C13DB7 /* KeychainExerciseViewController.xib in Resources */,
+				1440E36A151E655600C13DB7 /* mansi.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,7 +602,7 @@
 				14A6137F13A6F6C100830D15 /* SQLInjectionExerciseController.m in Sources */,
 				1411443A13A8441100594571 /* SQLInjectionArticlesViewController.m in Sources */,
 				14DB8EA113C8AD1B00D5672C /* LocalDataStorageExerciseController.m in Sources */,
-				3A37E7DE1522A04600D22678 /* KeychainExerciseViewController.m in Sources */,
+				1440E367151E653B00C13DB7 /* KeychainExerciseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
