@@ -66,9 +66,6 @@
 		14F8F57013775B8000F63E1F /* iGoatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F56F13775B8000F63E1F /* iGoatTests.m */; };
 		14F8F5801377758B00F63E1F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F8F57E1377758B00F63E1F /* InfoViewController.m */; };
 		14F8F5811377758B00F63E1F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F8F57F1377758B00F63E1F /* InfoViewController.xib */; };
-		3A37E7DE1522A04600D22678 /* KeychainExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */; };
-		3A37E7DF1522A04600D22678 /* KeychainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */; };
-		3A37E7E11522A0ED00D22678 /* mansi.html in Resources */ = {isa = PBXBuildFile; fileRef = 3A37E7E01522A0ED00D22678 /* mansi.html */; };
 		3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C2DF151D72020050CBAB /* Settings.bundle */; };
 		3AB0740E151D6E5B000E2A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0740D151D6E5B000E2A2C /* Security.framework */; };
 		77F3364A13994FA500527BA5 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 77F3364913994FA500527BA5 /* splash.html */; };
@@ -174,9 +171,6 @@
 		14F8F57D1377758B00F63E1F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		14F8F57E1377758B00F63E1F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		14F8F57F1377758B00F63E1F /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
-		3A37E7DB1522A04600D22678 /* KeychainExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainExerciseViewController.h; sourceTree = "<group>"; };
-		3A37E7DC1522A04600D22678 /* KeychainExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainExerciseViewController.m; sourceTree = "<group>"; };
-		3A37E7DD1522A04600D22678 /* KeychainExerciseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeychainExerciseViewController.xib; sourceTree = "<group>"; };
 		3A37E7E01522A0ED00D22678 /* mansi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mansi.html; sourceTree = "<group>"; };
 		3AA4C2DF151D72020050CBAB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3AB0740D151D6E5B000E2A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
