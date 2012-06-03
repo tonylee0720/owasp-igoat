@@ -40,9 +40,22 @@
 //  selector:@selector(didBecomeActive:) name:@"didBecomeActive" 
 //  object:nil];
 //
-// And uncomment the methods below...
+// Don't forget to remove the observers in a dealloc() method, which should look
+//  something like:
+//      - (void)dealloc:(NSString *)nibNameOrNil 
+//          {
+//              [[NSNotificationCenter defaultCenter] 
+//                  removeObserver:self name:@"didEnterBackground" object:nil];
+//              [[NSNotificationCenter defaultCenter] 
+//                  removeObserver:self name:@"didBecomeActive" object:nil];
+//              [super dealloc];
+//          }
 //
-// (Don't forget to remove the observers in dealloc() method.)
+//  While this isn't a necessity, it is a good practice.
+//
+// And uncomment the methods below. These are the observer methods that
+// you've defined above.
+//
 //******************************************************************************
 
 /*

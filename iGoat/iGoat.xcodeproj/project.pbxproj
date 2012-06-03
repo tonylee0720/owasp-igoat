@@ -36,7 +36,6 @@
 		14769F48139EFA190048D6FA /* CutAndPasteExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14769F46139EFA190048D6FA /* CutAndPasteExerciseController.xib */; };
 		148398921389EFD700F9558A /* AssetStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 148398911389EFD700F9558A /* AssetStore.m */; };
 		1483989C138DDBE100F9558A /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 1483989A138DDBE100F9558A /* Asset.m */; };
-		1483989E138DEE0D00F9558A /* Assets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1483989D138DEE0D00F9558A /* Assets.plist */; };
 		14A27D16137B70A000D669EC /* igoat.css in Resources */ = {isa = PBXBuildFile; fileRef = 14A27D15137B70A000D669EC /* igoat.css */; };
 		14A27D18137B70B100D669EC /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 14A27D17137B70B100D669EC /* about.html */; };
 		14A2CCD913972112007BACA7 /* HintsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A2CCD813972112007BACA7 /* HintsViewController.m */; };
@@ -68,6 +67,10 @@
 		14F8F5811377758B00F63E1F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F8F57F1377758B00F63E1F /* InfoViewController.xib */; };
 		3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4C2DF151D72020050CBAB /* Settings.bundle */; };
 		3AB0740E151D6E5B000E2A2C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0740D151D6E5B000E2A2C /* Security.framework */; };
+		7763D3BF1579449200502323 /* rutger.html in Resources */ = {isa = PBXBuildFile; fileRef = 7763D3BE1579449200502323 /* rutger.html */; };
+		7763D3C1157944E800502323 /* Assets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7763D3C0157944E800502323 /* Assets.plist */; };
+		7763D3C8157945F200502323 /* KeystrokeLoggingExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7763D3C41579455700502323 /* KeystrokeLoggingExerciseController.m */; };
+		7763D3C9157946FE00502323 /* KeystrokeLoggingExerciseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7763D3C51579455700502323 /* KeystrokeLoggingExerciseController.xib */; };
 		77F3364A13994FA500527BA5 /* splash.html in Resources */ = {isa = PBXBuildFile; fileRef = 77F3364913994FA500527BA5 /* splash.html */; };
 /* End PBXBuildFile section */
 
@@ -130,7 +133,6 @@
 		148398911389EFD700F9558A /* AssetStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetStore.m; sourceTree = "<group>"; };
 		1483989A138DDBE100F9558A /* Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asset.m; sourceTree = "<group>"; };
 		1483989B138DDBE100F9558A /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asset.h; sourceTree = "<group>"; };
-		1483989D138DEE0D00F9558A /* Assets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Assets.plist; sourceTree = "<group>"; };
 		14A27D15137B70A000D669EC /* igoat.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = igoat.css; sourceTree = "<group>"; };
 		14A27D17137B70B100D669EC /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		14A2CCD713972112007BACA7 /* HintsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HintsViewController.h; sourceTree = "<group>"; };
@@ -174,6 +176,11 @@
 		3A37E7E01522A0ED00D22678 /* mansi.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = mansi.html; sourceTree = "<group>"; };
 		3AA4C2DF151D72020050CBAB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3AB0740D151D6E5B000E2A2C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7763D3BE1579449200502323 /* rutger.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = rutger.html; sourceTree = "<group>"; };
+		7763D3C0157944E800502323 /* Assets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Assets.plist; sourceTree = "<group>"; };
+		7763D3C31579455700502323 /* KeystrokeLoggingExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeystrokeLoggingExerciseController.h; sourceTree = "<group>"; };
+		7763D3C41579455700502323 /* KeystrokeLoggingExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeystrokeLoggingExerciseController.m; sourceTree = "<group>"; };
+		7763D3C51579455700502323 /* KeystrokeLoggingExerciseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeystrokeLoggingExerciseController.xib; sourceTree = "<group>"; };
 		77F3364913994FA500527BA5 /* splash.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = splash.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,7 +228,8 @@
 		1436296D13915AB2007B57F2 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
-				3AB07416151D6EE7000E2A2C /* Keychain Exercise */,
+				7763D3C21579452A00502323 /* Keylogging */,
+				3AB07416151D6EE7000E2A2C /* Keychain */,
 				14DB8E9D13C8ACBB00D5672C /* Local Data Storage */,
 				14A6137B13A6F6A100830D15 /* SQL Injection */,
 				14A6137313A539E800830D15 /* Authentication */,
@@ -263,8 +271,9 @@
 		143EB4B91378A8F300475E3B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7763D3C0157944E800502323 /* Assets.plist */,
+				7763D3BE1579449200502323 /* rutger.html */,
 				1440E369151E655600C13DB7 /* mansi.html */,
-				1483989D138DEE0D00F9558A /* Assets.plist */,
 				14A27D15137B70A000D669EC /* igoat.css */,
 				14A27D17137B70B100D669EC /* about.html */,
 				77F3364913994FA500527BA5 /* splash.html */,
@@ -436,14 +445,24 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
-		3AB07416151D6EE7000E2A2C /* Keychain Exercise */ = {
+		3AB07416151D6EE7000E2A2C /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
 				1440E364151E653B00C13DB7 /* KeychainExerciseViewController.h */,
 				1440E365151E653B00C13DB7 /* KeychainExerciseViewController.m */,
 				1440E366151E653B00C13DB7 /* KeychainExerciseViewController.xib */,
 			);
-			name = "Keychain Exercise";
+			name = Keychain;
+			sourceTree = "<group>";
+		};
+		7763D3C21579452A00502323 /* Keylogging */ = {
+			isa = PBXGroup;
+			children = (
+				7763D3C31579455700502323 /* KeystrokeLoggingExerciseController.h */,
+				7763D3C41579455700502323 /* KeystrokeLoggingExerciseController.m */,
+				7763D3C51579455700502323 /* KeystrokeLoggingExerciseController.xib */,
+			);
+			name = Keylogging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,7 +510,7 @@
 		14F8F53313775B8000F63E1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "KRvW Associates, LLC";
 			};
 			buildConfigurationList = 14F8F53613775B8000F63E1F /* Build configuration list for PBXProject "iGoat" */;
@@ -526,7 +545,6 @@
 				14A27D16137B70A000D669EC /* igoat.css in Resources */,
 				14A27D18137B70B100D669EC /* about.html in Resources */,
 				140D704C1389968500A778A3 /* ExercisesViewController.xib in Resources */,
-				1483989E138DEE0D00F9558A /* Assets.plist in Resources */,
 				1436296913910C82007B57F2 /* ExerciseIntroViewController.xib in Resources */,
 				1436296F1393213B007B57F2 /* KRvWAssociates.html in Resources */,
 				1436297713944AE6007B57F2 /* ServerCommunicationExerciseController.xib in Resources */,
@@ -542,6 +560,9 @@
 				3AA4C2E0151D72020050CBAB /* Settings.bundle in Resources */,
 				1440E368151E653B00C13DB7 /* KeychainExerciseViewController.xib in Resources */,
 				1440E36A151E655600C13DB7 /* mansi.html in Resources */,
+				7763D3BF1579449200502323 /* rutger.html in Resources */,
+				7763D3C1157944E800502323 /* Assets.plist in Resources */,
+				7763D3C9157946FE00502323 /* KeystrokeLoggingExerciseController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +624,7 @@
 				1411443A13A8441100594571 /* SQLInjectionArticlesViewController.m in Sources */,
 				14DB8EA113C8AD1B00D5672C /* LocalDataStorageExerciseController.m in Sources */,
 				1440E367151E653B00C13DB7 /* KeychainExerciseViewController.m in Sources */,
+				7763D3C8157945F200502323 /* KeystrokeLoggingExerciseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +724,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iGoat/iGoat-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iGoat/iGoat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,6 +740,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iGoat/iGoat-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iGoat/iGoat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -737,6 +761,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iGoatTests/iGoatTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iGoatTests/iGoatTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -759,6 +784,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iGoatTests/iGoatTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iGoatTests/iGoatTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",

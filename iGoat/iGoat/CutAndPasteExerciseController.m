@@ -14,6 +14,16 @@
 //******************************************************************************
 // SOLUTION
 //
+// There are several ways of handling this situation. What we've chosen here is
+// to store the cut and paste buffer contents into a local instance variable 
+// (pastboardContents) prior to backgrounding the app. Then, on return, we put
+// those stored contents back into the buffer. That way, the feature can
+// still be used within the application. NOTE: Using this approach will also
+// overwrite any buffer contents from other apps that the user may want to use
+// inside of ours. It may be best to verify the buffer is empty before overwriting
+// it upon returning to the app. We have NOT done that here, however. If you
+// choose to do so, look at the didBecomeActive method below.
+//
 // Register to listen for background notifications in the initWithNibName()
 // override...
 //
@@ -25,11 +35,28 @@
 //  selector:@selector(didBecomeActive:) name:@"didBecomeActive" 
 //  object:nil];
 //
-// Define a pasteboardContents instance variable (NSString *).
+// Define a pasteboardContents instance variable (NSString *)
+//      In CutAndPasteExerciseController.h, add:
+//          @property (nonatomic, retain) NSString *pasteboardContents;
+//      And in the .m file, add: @synthesize pasteboardContents following 
+//          the @implementation line
 //
-// And uncomment the methods below...
+// Don't forget to remove the observers in a dealloc() method, which should look
+//  something like:
+//      - (void)dealloc:(NSString *)nibNameOrNil 
+//          {
+//              [[NSNotificationCenter defaultCenter] 
+//                  removeObserver:self name:@"didEnterBackground" object:nil];
+//              [[NSNotificationCenter defaultCenter] 
+//                  removeObserver:self name:@"didBecomeActive" object:nil];
+//              [super dealloc];
+//          }
 //
-// (Don't forget to remove the observers in dealloc() method.)
+//  While this isn't a necessity, it is a good practice.
+//
+// And uncomment the methods below. These are the observer methods that
+// you've defined above.
+//
 //******************************************************************************
 
 /*

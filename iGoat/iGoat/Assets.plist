@@ -247,6 +247,36 @@ It is recommended by Apple to use the keychain on iPhone to store passwords and 
 
 Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&quot;. This function uses  &quot;SecItemAdd&quot;, &quot;SecItemCopyMatch&quot; and &quot;SecItemUpdate&quot; for adding, retrieving and updating items in an app&apos;s keychain.</string>
 			</dict>
+			<dict>
+				<key>creditsFile</key>
+				<string>rutger.html</string>
+				<key>description</key>
+				<string>The autocorrect spellchecker function of iOS is a famous feature of iOS, sometimes very useful and other times offering hilarious suggestions.
+                
+                    Less funny is the fact that it stores text that you have entered on your device. This data is retrievable if you know where to look. Make sure to run iGoat on the simulator if you want to do this exercise.
+                </string>
+				<key>hints</key>
+				<array>
+					<string>Type some text into the provided text fields.</string>
+					<string>Make sure you make one or two typing mistakes to see autocorrect in action and verify that autocorrect is in use.</string>
+					<string>When done entering data, close iGoat and see if you can retrieve the data that was suposedly stored on the simulator.</string>
+				</array>
+				<key>initialViewController</key>
+				<string>KeystrokeLoggingExerciseController</string>
+				<key>name</key>
+				<string>Keystroke Logging</string>
+				<key>solution</key>
+				<string>To verify the existence of this exposure, launch the exercise, and
+                    then enter some text into the fields. Make sure to use the autocorrect function by entering some misspelled words. Later you can try it without misspelling words and compare the behaviour.
+                    
+                    Once you are done entering text, close the iGoat app and open Finder to explore your iPhone simulator. ( /Users/[username]/Library/Application Support/iPhone Simulator/5.1 )
+                    
+                    Search for a file called dynamic-text.dat (it can be found in de Library/keyboard folder in your iOS simulator. Open this file in your favorite text editor (eg. Emacs, TextWrangler). You should be able to find familiar text in this file.
+                    
+                    This logging is performed to help autocorrect, the way to prevent this is to turn of autocorrect on your textfields and textviews. This can be done by code or in the Interface Builder.
+                
+                </string>
+			</dict>
 		</array>
 	</dict>
 	<key>Data Protection (Transit)</key>
