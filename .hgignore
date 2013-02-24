@@ -1,3 +1,5 @@
+# TODO: Add openssl build files (the ones deleted in "make clean").
+
 syntax: glob
 
 .DS_Store
@@ -5,5 +7,20 @@ syntax: glob
 *.swo
 iGoat/iGoat.xcodeproj/xcuserdata/*
 iGoat/iGoat.xcodeproj/project.xcworkspace/xcuserdata/*
-lib/sqlcipher-openssl-xcode/openssl.xcodeproj/xcuserdata/*
+lib/openssl-xcode/openssl.xcodeproj/xcuserdata/*
 lib/sqlcipher/sqlcipher.xcodeproj/xcuserdata/*
+lib/sqlcipher/.target_source
+lib/sqlcipher/keywordhash.h
+lib/sqlcipher/lemon
+lib/sqlcipher/lempar.c
+lib/sqlcipher/mkkeywordhash
+lib/sqlcipher/opcodes.c
+lib/sqlcipher/opcodes.h
+lib/sqlcipher/parse.c
+lib/sqlcipher/parse.h
+lib/sqlcipher/parse.h.temp
+lib/sqlcipher/parse.out
+lib/sqlcipher/parse.y
+lib/sqlcipher/sqlite3.c
+lib/sqlcipher/sqlite3.h
+lib/sqlcipher/tsrc/*
