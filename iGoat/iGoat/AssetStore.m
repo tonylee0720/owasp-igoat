@@ -7,14 +7,12 @@
 
 @synthesize categories;
 
--(id) init {
+- (id)init {
     categories = [[NSMutableArray alloc] init];
 
     // Load the assets from the Assets.plist file.
-    NSString *assetsListPath = [[[NSBundle mainBundle] bundlePath]
-                                stringByAppendingPathComponent:@"Assets.plist"];
+    NSString *assetsListPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"Assets.plist"];
     NSDictionary *assets = [NSDictionary dictionaryWithContentsOfFile:assetsListPath];
-
     NSArray *exercisesArray;
     NSDictionary *categoryDict;
     
@@ -22,17 +20,15 @@
         categoryDict = [assets objectForKey:categoryName];
         exercisesArray = [categoryDict objectForKey:@"exercises"];
 
-        ExerciseCategory *category = [[ExerciseCategory alloc] initWithName:categoryName
-                                            longDescription:[categoryDict objectForKey:@"description"]];
+        ExerciseCategory *category = [[ExerciseCategory alloc] initWithName:categoryName longDescription:[categoryDict objectForKey:@"description"]];
 
         for (NSDictionary *exerciseDict in exercisesArray) {
-            Exercise *exercise = [[[Exercise alloc] initWithName:[exerciseDict objectForKey:@"name"]
-                                                 longDescription:[exerciseDict objectForKey:@"description"]
-                                                     creditsFile:[exerciseDict objectForKey:@"creditsFile"]
-                                                           hints:[exerciseDict objectForKey:@"hints"]
-                                                        solution:[exerciseDict objectForKey:@"solution"]
-                                           initialViewController:[exerciseDict objectForKey:@"initialViewController"]]
-                                  autorelease];
+            Exercise *exercise = [[Exercise alloc] initWithName:[exerciseDict objectForKey:@"name"]
+                                                longDescription:[exerciseDict objectForKey:@"description"]
+                                                    creditsFile:[exerciseDict objectForKey:@"creditsFile"]
+                                                          hints:[exerciseDict objectForKey:@"hints"]
+                                                       solution:[exerciseDict objectForKey:@"solution"]
+                                          initialViewController:[exerciseDict objectForKey:@"initialViewController"]];
 
             [category.exercises addObject:exercise];
         }
@@ -41,11 +37,6 @@
     }
 
     return self;
-}
-
-- (void)dealloc {
-    [categories release];
-    [super dealloc];
 }
 
 @end
@@ -58,9 +49,9 @@
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -77,10 +68,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

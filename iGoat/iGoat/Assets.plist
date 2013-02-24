@@ -29,7 +29,7 @@
                     Verifying the existance of the vulnerability is simple. First, launch
                     the Ruby server from a Terminal window by typing &quot;./igoat_server.rb&quot;
                     from the server folder under the folder where you&apos;ve installed the iGoat Xcode project. Next,
-                    just login with a username of &quot;Donkey&quot; and a password of &quot;Hotey&quot;.
+                    just login with a username of &quot;donkey&quot; and a password of &quot;hotey&quot;.
                     
                     If everything is working, iGoat will notify you that your credentials
                     have been exposed.
@@ -40,8 +40,8 @@
                     the server.)</string>
 				<key>hints</key>
 				<array>
-					<string>Try logging in with a username of &quot;Donkey&quot; and a password of &quot;Hotey&quot;</string>
-					<string>If you received an error message, be sure to turn on the server, and then try again</string>
+					<string>Try logging in with a username of &quot;donkey&quot; and a password of &quot;hotey&quot;.</string>
+					<string>If you received an error message, be sure to turn on the server, and then try again.</string>
 					<string>To turn on the server, open a terminal window and run ./igoat_server.rb</string>
 					<string>If you received a message telling you that your credentials were compromised, you&apos;ve finished the first part.</string>
 				</array>
@@ -75,6 +75,8 @@
 		<key>exercises</key>
 		<array>
 			<dict>
+				<key>initialViewController</key>
+				<string>CutAndPasteExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -91,8 +93,6 @@
 					<string>Exit iGoat and paste it into another app.</string>
 					<string>If it successfully pasted outside of iGoat, then you&apos;ve leaked sensitive data.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>CutAndPasteExerciseController</string>
 				<key>name</key>
 				<string>Cut-and-Paste</string>
 				<key>solution</key>
@@ -115,6 +115,8 @@
                     prior to reverting to the commented source, however.</string>
 			</dict>
 			<dict>
+				<key>initialViewController</key>
+				<string>BackgroundingExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -136,8 +138,6 @@
 					<string>Verify that the sensitive data was stored in a JPG file on the
                         device.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>BackgroundingExerciseController</string>
 				<key>name</key>
 				<string>Backgrounding</string>
 				<key>solution</key>
@@ -166,6 +166,8 @@
                 </string>
 			</dict>
 			<dict>
+				<key>initialViewController</key>
+				<string>LocalDataStorageExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -184,8 +186,6 @@
                         database.</string>
 					<string>Now, go verify the sensitive data in the database file.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>LocalDataStorageExerciseController</string>
 				<key>name</key>
 				<string>Local Data Storage</string>
 				<key>solution</key>
@@ -219,6 +219,8 @@
                 </string>
 			</dict>
 			<dict>
+				<key>initialViewController</key>
+				<string>KeychainExerciseViewController</string>
 				<key>creditsFile</key>
 				<string>mansi.html</string>
 				<key>description</key>
@@ -227,8 +229,8 @@
 In this lesson,  user&apos;s credentials are stored in &quot;User Defaults&quot;. Your task is to locate that sensitive data on your iPhone/Simulator.</string>
 				<key>hints</key>
 				<array>
-					<string>  NSUserDefaults stores information in plist files, unencrypted on your iPhone/iOS Simulator.</string>
-					<string>Enter your credentials and let it &quot;Remember&quot; it.</string>
+					<string>NSUserDefaults stores information in plist files, unencrypted on your iPhone/iOS Simulator.</string>
+					<string>Enter your credentials and let it &quot;Remember me&quot;.</string>
 					<string>Now, verify your credentials stored in Settings App. 
 
 This information is also stored in:
@@ -236,8 +238,6 @@ This information is also stored in:
                         ~/Library/Application Support/iPhone Simulator/&lt;{version}&gt;/Applications
                         &lt;{Bundle ID}&gt;/Library/Preferences/com.krvw.iGoat.plist</string>
 				</array>
-				<key>initialViewController</key>
-				<string>KeychainExerciseViewController</string>
 				<key>name</key>
 				<string>Keychain Usage</string>
 				<key>solution</key>
@@ -248,6 +248,8 @@ It is recommended by Apple to use the keychain on iPhone to store passwords and 
 Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&quot;. This function uses  &quot;SecItemAdd&quot;, &quot;SecItemCopyMatch&quot; and &quot;SecItemUpdate&quot; for adding, retrieving and updating items in an app&apos;s keychain.</string>
 			</dict>
 			<dict>
+				<key>initialViewController</key>
+				<string>KeystrokeLoggingExerciseController</string>
 				<key>creditsFile</key>
 				<string>rutger.html</string>
 				<key>description</key>
@@ -261,8 +263,6 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 					<string>Make sure you make one or two typing mistakes to see autocorrect in action and verify that autocorrect is in use.</string>
 					<string>When done entering data, close iGoat and see if you can retrieve the data that was suposedly stored on the simulator.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>KeystrokeLoggingExerciseController</string>
 				<key>name</key>
 				<string>Keystroke Logging</string>
 				<key>solution</key>
@@ -288,6 +288,8 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 			<dict>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
+				<key>initialViewController</key>
+				<string>ServerCommunicationExerciseController</string>
 				<key>description</key>
 				<string>This exercise demonstrates the need for protecting sensitive data when it is in transit from the iOS device to the server. In the first step, you are presented with an authentication page. From there, you will log in using the provided account credentials--and see whether they get compromised in transit.</string>
 				<key>hints</key>
@@ -301,8 +303,6 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
                         ./igoat_server.rb from the server folder in your iGoat distribution</string>
 					<string>Now, run the exercise and send the data in the provided fields to the server by pressing the submit button.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>ServerCommunicationExerciseController</string>
 				<key>name</key>
 				<string>Server Communication</string>
 				<key>solution</key>
@@ -327,6 +327,8 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 		<key>exercises</key>
 		<array>
 			<dict>
+				<key>initialViewController</key>
+				<string>SQLInjectionExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -354,8 +356,6 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 					<string>Try one of the dreaded 1=1 attacks next to see if you can dump
                         all the data in the database.</string>
 				</array>
-				<key>initialViewController</key>
-				<string>SQLInjectionExerciseController</string>
 				<key>name</key>
 				<string>SQL Injection</string>
 				<key>solution</key>

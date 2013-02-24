@@ -4,16 +4,16 @@
 
 @implementation HintsViewController
 
-@synthesize exercise, scrollView, pageControl;
+@synthesize scrollView, pageControl, exercise = _exercise;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex {
-    NSString *hintText = (NSString *)[ex.hints objectAtIndex:ex.hintIndex];
+- (void)setExercise:(Exercise *)newExercise {
+    _exercise = newExercise;
 
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil infoText:hintText])) {
-        self.exercise = ex;
-    }
-    
-    return self;
+    // Reset the hint index on the exercise.
+    _exercise.hintIndex = 0;
+
+    // Set the content to the first hint.
+    [self setContent:(NSString *)[_exercise.hints objectAtIndex:_exercise.hintIndex]];
 }
 
 - (void)viewDidLoad {
@@ -22,21 +22,18 @@
     recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(loadPreviousHint)];
     [recognizer setDirection:UISwipeGestureRecognizerDirectionRight];
     [[self view] addGestureRecognizer:recognizer];
-    [recognizer release];
     
     recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(loadNextHint)];
     [recognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
     [[self view] addGestureRecognizer:recognizer];
-    [recognizer release];
 
     // Configure the page controller.
     self.pageControl.numberOfPages = self.exercise.totalHints;
     self.pageControl.currentPage = 0;
     self.pageControl.defersCurrentPageDisplay = YES;
-    self.pageControl.backgroundColor = UIColorFromHex(0x262b32);
+    // self.pageControl.backgroundColor = UIColorFromHex(0x262b32);
 
-    [self.pageControl addTarget:self action:@selector(pageDidChangeAction)
-               forControlEvents:UIControlEventValueChanged];
+    [self.pageControl addTarget:self action:@selector(pageDidChangeAction) forControlEvents:UIControlEventValueChanged];
 
     [super viewDidLoad];
 }
@@ -60,7 +57,7 @@
     if (idx < self.exercise.totalHints) {
         self.exercise.hintIndex = idx;
         self.pageControl.currentPage = idx;
-        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
+        [self setContent:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
     }
 }
 
@@ -70,7 +67,7 @@
     if (idx >= 0) {
         self.exercise.hintIndex = idx;
         self.pageControl.currentPage = idx;
-        [self loadHtmlString:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
+        [self setContent:(NSString *)[self.exercise.hints objectAtIndex:(idx)]];
     }
 }
 
@@ -86,18 +83,6 @@
     }
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)dealloc {
-    [exercise release];
-    [scrollView release];
-    [pageControl release];
-    [super dealloc];
-}
-
 @end
 
 //******************************************************************************
@@ -108,9 +93,9 @@
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -127,10 +112,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

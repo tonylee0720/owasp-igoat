@@ -4,14 +4,12 @@
 
 @synthesize creditsFile, hints, hintIndex, totalHints, solution, category, initialViewController;
 
-- (id)initWithName:(NSString *)assetName longDescription:(NSString *)desc creditsFile:(NSString *)filename
-             hints:(NSMutableArray *)hintsArray solution:(NSString *)solutionText
-initialViewController:(NSString *)controllerName {
+- (id)initWithName:(NSString *)assetName longDescription:(NSString *)desc creditsFile:(NSString *)filename hints:(NSMutableArray *)hintsArray solution:(NSString *)solutionText initialViewController:(NSString *)viewControllerName {
 
     if ((self = [self initWithName:assetName longDescription:desc])) {
         self.creditsFile = filename;
         self.hints = hintsArray;
-        self.initialViewController = controllerName;
+        self.initialViewController = viewControllerName;
         self.hintIndex = 0;
         self.totalHints = [hintsArray count];
         self.solution = solutionText;
@@ -24,10 +22,7 @@ initialViewController:(NSString *)controllerName {
     // Load the credits file as a string.
     NSError *error;
     NSString *path = [[NSBundle mainBundle] pathForResource:self.creditsFile ofType:nil];
-    NSString *fileContentsAsString = [[[NSString alloc]
-                                      initWithContentsOfFile:path
-                                      encoding:NSUTF8StringEncoding
-                                      error:&error] autorelease];
+    NSString *fileContentsAsString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
 
     return fileContentsAsString;
 }
@@ -47,15 +42,6 @@ initialViewController:(NSString *)controllerName {
 
 }
 
-- (void)dealloc {
-    [creditsFile release];
-    [hints release];
-    [solution release];
-    [category release];
-    [initialViewController release];
-    [super dealloc];
-}
-
 @end
 
 //******************************************************************************
@@ -66,9 +52,9 @@ initialViewController:(NSString *)controllerName {
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -85,10 +71,7 @@ initialViewController:(NSString *)controllerName {
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

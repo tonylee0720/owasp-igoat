@@ -12,15 +12,12 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 	jsonWriter.humanReadable = YES;
 	jsonWriter.sortKeys = YES;
 
-	NSDictionary *accountInfo = [[NSDictionary alloc] initWithObjectsAndKeys:
-								 firstNameField.text, @"firstName",
-								 lastNameField.text, @"lastName",
-								 ssnField.text, @"socialSecurityNumber", nil];
+	NSDictionary *accountInfo = [[NSDictionary alloc] initWithObjectsAndKeys:firstNameField.text, @"firstName", lastNameField.text, @"lastName", ssnField.text, @"socialSecurityNumber", nil];
 	
 	NSString *jsonString = [[NSString alloc] initWithString:[jsonWriter stringWithObject:accountInfo]];
     
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:USER_URL]];
-	responseData = [[NSMutableData data] retain];
+	responseData = [NSMutableData data];
 	
 	[request setHTTPMethod:@"POST"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -28,11 +25,10 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
     [request setValue:@"close" forHTTPHeaderField:@"Connection"];
 	[request setHTTPBody:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
 
-	[jsonWriter release];
-	[jsonString release];
-	[accountInfo release];
+	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    // This line only exists to avoid a compiler warning (Unused Entity Issue).
+    if (conn) {}
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -44,19 +40,12 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
     NSString *sslEnabled = [headers objectForKey:@"X-Goat-Secure"];
 
     if ([sslEnabled boolValue]) {
-        alert = [[UIAlertView alloc]
-                 initWithTitle:@"Congratulations!"
-                 message:@"The user's account info was protected in transit."
-                 delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Congratulations!" message:@"The user's account info was protected in transit." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     } else {
-        alert = [[UIAlertView alloc]
-                 initWithTitle:@"Owned"
-                 message:@"The user's account profile info was stolen by someone on your Wi-Fi!"
-                 delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alert = [[UIAlertView alloc] initWithTitle:@"Owned" message:@"The user's account profile info was stolen by someone on your Wi-Fi!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     }
 
     [alert show];  
-    [alert release];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -71,38 +60,11 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	[connection release];
-	[responseData release];
-
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Error"
-                          message:@"Server reqest failed; see log for details."
-                          delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Server reqest failed; see log for details." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 
     [alert show];  
-    [alert release];
 
-    NSLog(@"Request failed: %@ %@", [error localizedDescription],
-		  [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	[connection release];
-	[responseData release];
-}
-
-- (void)dealloc {
-    [firstNameField release];
-    [lastNameField release];
-    [ssnField release];
-    [super dealloc];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    self.firstNameField = nil;
-    self.lastNameField = nil;
-    self.ssnField = nil;
+    NSLog(@"Request failed: %@ %@", [error localizedDescription], [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
 }
 
 //******************************************************************************
@@ -126,17 +88,12 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 //******************************************************************************
 
 /*
-- (BOOL)connection:(NSURLConnection *)connection
-    canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-    
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
 }
 
-- (void)connection:(NSURLConnection *)connection
-    didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	
-    [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]
-		 forAuthenticationChallenge:challenge];
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {	
+    [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
 }
 */
 
@@ -150,9 +107,9 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -169,10 +126,7 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

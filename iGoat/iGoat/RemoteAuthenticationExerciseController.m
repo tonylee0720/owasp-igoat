@@ -7,15 +7,15 @@ NSString * const TOKEN_URL = @"http://localhost:8080/igoat/token?username=%@&pas
 @synthesize usernameField, passwordField;
 
 - (IBAction)submit:(id)sender {
-    NSString *urlWithParams =
-    [NSString stringWithFormat:TOKEN_URL, usernameField.text, passwordField.text];
-
-	NSMutableURLRequest *request =
-    [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlWithParams]];
+    NSString *urlWithParams = [NSString stringWithFormat:TOKEN_URL, usernameField.text, passwordField.text];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlWithParams]];
 	
 	[request setHTTPMethod:@"GET"];
     
-	[[NSURLConnection alloc] initWithRequest:request delegate:self];
+	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // This line only exists to avoid a compiler warning (Unused Entity Issue).
+    if (conn) {}
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {    
@@ -35,38 +35,23 @@ NSString * const TOKEN_URL = @"http://localhost:8080/igoat/token?username=%@&pas
                  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     }
     
-    [alert show];  
-    [alert release];
+    [alert show];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	[connection release];
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@"Error"
                           message:@"Server reqest failed; see log for details."
                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     [alert show];  
-    [alert release];
     
     NSLog(@"Request failed: %@ %@", [error localizedDescription],
 		  [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	[connection release];
-}
 
-- (void)dealloc {
-    [usernameField release];
-    [passwordField release];
-    [super dealloc];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    self.usernameField = nil;
-    self.passwordField = nil;
 }
 
 //******************************************************************************
@@ -96,17 +81,12 @@ NSString * const TOKEN_URL = @"http://localhost:8080/igoat/token?username=%@&pas
 //******************************************************************************
 
 /*
-- (BOOL)connection:(NSURLConnection *)connection
-canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
-    
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
 }
 
-- (void)connection:(NSURLConnection *)connection
-didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	
-    [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]
-		 forAuthenticationChallenge:challenge];
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	[challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
 }
 */
 
@@ -120,9 +100,9 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -139,10 +119,7 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

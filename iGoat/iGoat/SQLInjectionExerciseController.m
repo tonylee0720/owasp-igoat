@@ -8,8 +8,7 @@
 
 - (IBAction)search:(id)sender {
     // Search the database for articles matching the search string.
-    NSString *dbPath = [[[NSBundle mainBundle] resourcePath]
-                        stringByAppendingPathComponent:@"articles.sqlite"];
+    NSString *dbPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"articles.sqlite"];
 
     sqlite3 *db;
 	const char *path = [dbPath UTF8String];
@@ -19,10 +18,8 @@
         return;
     }
 
-    NSString *searchString = [self.searchField.text length] > 0 ?
-    [NSString stringWithFormat:@"%@%@%@", @"%", self.searchField.text, @"%"] : @"%";
-    NSString *query = [NSString stringWithFormat:
-                       @"SELECT title FROM article WHERE title LIKE '%@' AND premium=0", searchString];
+    NSString *searchString = [self.searchField.text length] > 0 ? [NSString stringWithFormat:@"%@%@%@", @"%", self.searchField.text, @"%"] : @"%";
+    NSString *query = [NSString stringWithFormat:@"SELECT title FROM article WHERE title LIKE '%@' AND premium=0", searchString];
 
     sqlite3_stmt *stmt;
     sqlite3_prepare_v2(db, [query UTF8String], -1, &stmt, nil);
@@ -30,9 +27,7 @@
     NSMutableArray *articleTitles = [[NSMutableArray alloc] init];
 
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        NSString *title =
-        [[[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt, 0)] autorelease];
-
+        NSString *title = [[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(stmt, 0)];
         [articleTitles addObject:title];
     }
     
@@ -40,25 +35,10 @@
     sqlite3_close(db);
 
     // Create the articles (table) controller.
-    SQLInjectionArticlesViewController *articlesController =
-    [[SQLInjectionArticlesViewController alloc] initWithNibName:@"SQLInjectionArticlesViewController"
-                                                         bundle: nil articleTitles:articleTitles];
+    SQLInjectionArticlesViewController *articlesController = [[SQLInjectionArticlesViewController alloc] initWithNibName:@"SQLInjectionArticlesViewController" bundle: nil articleTitles:articleTitles];
     
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:articlesController animated:YES];
-    [articlesController release];
-}
-
-- (void)dealloc
-{
-    [searchField release];
-    [super dealloc];
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    searchField = nil;
 }
 
 //******************************************************************************
@@ -90,15 +70,15 @@
 
 //******************************************************************************
 //
-// SQLInjectionExerciseController.h
+// SQLInjectionExerciseController.m
 // iGoat
 //
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -115,10 +95,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************
