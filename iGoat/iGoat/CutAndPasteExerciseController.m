@@ -2,11 +2,10 @@
 
 @implementation CutAndPasteExerciseController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        
     }
     return self;
 }
@@ -18,11 +17,20 @@
 // to store the cut and paste buffer contents into a local instance variable 
 // (pastboardContents) prior to backgrounding the app. Then, on return, we put
 // those stored contents back into the buffer. That way, the feature can
-// still be used within the application. NOTE: Using this approach will also
-// overwrite any buffer contents from other apps that the user may want to use
-// inside of ours. It may be best to verify the buffer is empty before overwriting
-// it upon returning to the app. We have NOT done that here, however. If you
-// choose to do so, look at the didBecomeActive method below.
+// still be used within the application.
+//
+// NOTE: Using this approach will also overwrite any buffer contents from other
+// apps that the user may want to use inside of ours. It may be best to verify
+// the buffer is empty before overwriting it upon returning to the app. We have
+// NOT done that here, however. If you choose to do so, look at the
+// didBecomeActive method below.
+//
+// TODO: Presently, there's no guarantee that the contents of the local
+// instance variable won't be cleared while the app is in the background.
+// Therefore, when the app is backgrounded, the contents of the pasteboard
+// are simply overwritten with an empty string. We should find a secure way to
+// reliably persist the contents and restore them when the app is brought back
+// into the foreground.
 //
 // Register to listen for background notifications in the initWithNibName()
 // override...
@@ -35,12 +43,6 @@
 //  selector:@selector(didBecomeActive:) name:@"didBecomeActive" 
 //  object:nil];
 //
-// Define a pasteboardContents instance variable (NSString *)
-//      In CutAndPasteExerciseController.h, add:
-//          @property (nonatomic, retain) NSString *pasteboardContents;
-//      And in the .m file, add: @synthesize pasteboardContents following 
-//          the @implementation line
-//
 // Don't forget to remove the observers in a dealloc() method, which should look
 //  something like:
 //      - (void)dealloc:(NSString *)nibNameOrNil 
@@ -49,10 +51,9 @@
 //                  removeObserver:self name:@"didEnterBackground" object:nil];
 //              [[NSNotificationCenter defaultCenter] 
 //                  removeObserver:self name:@"didBecomeActive" object:nil];
-//              [super dealloc];
 //          }
 //
-//  While this isn't a necessity, it is a good practice.
+// While this isn't a necessity, it is a good practice.
 //
 // And uncomment the methods below. These are the observer methods that
 // you've defined above.
@@ -60,17 +61,17 @@
 //******************************************************************************
 
 /*
-- (void)didEnterBackground:(NSNotification *)notification
-{
+- (void)didEnterBackground:(NSNotification *)notification {
+    // TODO: Find reliable way to persist the contents of the pasteboard when
+    // entering the background. For now, simply clear it.
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    self.pasteboardContents = pasteboard.string;
+    // self.pasteboardContents = pasteboard.string;
     pasteboard.string = @"";
 }
  
-- (void)didBecomeActive:(NSNotification *)notification
-{
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.pasteboardContents;
+- (void)didBecomeActive:(NSNotification *)notification {
+    // TODO: Find reliable way to restore the contents of the pasteboard when
+    // entering the background. For now, don't bother.
 }
 */
 
@@ -84,9 +85,9 @@
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -103,10 +104,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

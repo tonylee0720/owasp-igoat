@@ -1,25 +1,19 @@
 #import <UIKit/UIKit.h>
 #import "Exercise.h"
-#import "InfoViewDelegate.h"
 
-@interface ExerciseViewController : UIViewController <InfoViewDelegate> {
+@interface ExerciseViewController : UIViewController {
     float keyboardHeight;
 }
 
-@property (nonatomic, retain) Exercise *exercise;
-@property (nonatomic, retain) ExerciseViewController *rootExerciseController;
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, retain) UITextField *activeField;
+@property (strong, nonatomic) Exercise *exercise;
+@property (strong, nonatomic) ExerciseViewController *rootExerciseController;
+@property (strong, nonatomic) UITextField *activeField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *hintsButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             exercise:(Exercise *)ex;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-             exercise:(Exercise *)ex rootExerciseController:(ExerciseViewController *)exerciseController;
-- (void)restartExercise;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil exercise:(Exercise *)ex rootExerciseController:(ExerciseViewController *)exerciseController;
 - (NSString *)getPathForFilename:(NSString *)filename;
-- (void)goHome;
-- (void)showHintsDialog;
-- (void)showSolutionDialog;
 - (IBAction)textFieldReturn:(id)sender;
 - (IBAction)backgroundTouched:(id)sender;
 - (void)displayAlertWithTitle:(NSString *)title message:(NSString *)message;
@@ -38,9 +32,9 @@
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -57,10 +51,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************

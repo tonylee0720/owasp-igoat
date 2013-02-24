@@ -4,27 +4,12 @@
 
 @synthesize cityField, colorField;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
 
     }
     return self;
-}
-
-- (void)viewDidUnload
-{
-    self.cityField = nil;
-    self.colorField = nil;
-    [super viewDidUnload];
-}
-
-- (void)dealloc
-{
-    [cityField release];
-    [colorField release];
-    [super dealloc];
 }
 
 //******************************************************************************
@@ -48,10 +33,9 @@
 //                  removeObserver:self name:@"didEnterBackground" object:nil];
 //              [[NSNotificationCenter defaultCenter] 
 //                  removeObserver:self name:@"didBecomeActive" object:nil];
-//              [super dealloc];
 //          }
 //
-//  While this isn't a necessity, it is a good practice.
+// While this isn't a necessity, it is a good practice.
 //
 // And uncomment the methods below. These are the observer methods that
 // you've defined above.
@@ -59,14 +43,12 @@
 //******************************************************************************
 
 /*
-- (void)didEnterBackground:(NSNotification *)notification
-{
+- (void)didEnterBackground:(NSNotification *)notification {
     self.cityField.hidden = YES;
     self.colorField.hidden = YES;
 }
 
-- (void)didBecomeActive:(NSNotification *)notification
-{
+- (void)didBecomeActive:(NSNotification *)notification {
     self.cityField.hidden = NO;
     self.colorField.hidden = NO;
 }
@@ -82,9 +64,9 @@
 // This file is part of iGoat, an Open Web Application Security
 // Project tool. For details, please see http://www.owasp.org
 //
-// Copyright(c) 2011 KRvW Associates, LLC (http://www.krvw.com)
+// Copyright(c) 2013 KRvW Associates, LLC (http://www.krvw.com)
 // The iGoat project is principally sponsored by KRvW Associates, LLC
-// Project Leader, Kenneth R. van Wyk (ken@krvw.com)
+// Project Leader: Kenneth R. van Wyk (ken@krvw.com)
 // Lead Developer: Sean Eidemiller (sean@krvw.com)
 //
 // iGoat is free software; you may redistribute it and/or modify it
@@ -101,10 +83,7 @@
 // Foundation, Inc. 59 Temple Place, suite 330, Boston, MA 02111-1307
 // USA.
 //
-// Getting Source
-//
-// The source for iGoat is maintained at http://code.google.com/p/owasp-igoat/
-//
-// For project details, please see https://www.owasp.org/index.php/OWASP_iGoat_Project
+// Source Code: http://code.google.com/p/owasp-igoat/
+// Project Home: https://www.owasp.org/index.php/OWASP_iGoat_Project
 //
 //******************************************************************************
