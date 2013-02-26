@@ -28,6 +28,7 @@
 		// Create the table if it doesn't exist.
 		const char *createStmt = 
             "CREATE TABLE IF NOT EXISTS creds (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT);";
+        
 		sqlite3_exec(credentialsDB, createStmt, NULL, NULL, NULL);
 		
 		// Check to see if the user exists; update if yes, add if no.
@@ -90,7 +91,7 @@
 //
 // Finally, immediately after opening the database and before executing the
 // create table statement, make the following call to "key" the database (on
-// line 30).
+// line 31).
 //
 // sqlite3_exec(credentialsDB, "PRAGMA key = 'secretKey!'", NULL, NULL, NULL);
 //
