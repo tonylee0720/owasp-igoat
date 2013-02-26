@@ -20,6 +20,8 @@
 		141E2FDA16C3D49900586528 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141E2FD816C3D49900586528 /* MainStoryboard_iPad.storyboard */; };
 		141E2FDD16C3D49900586528 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141E2FDC16C3D49900586528 /* MasterViewController.m */; };
 		141E2FE016C3D49900586528 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 141E2FDF16C3D49900586528 /* DetailViewController.m */; };
+		143D7A2F16DD006D001AE794 /* articles.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 1462779116C56BDD007FE838 /* articles.sqlite */; };
+		143D7A3016DD0078001AE794 /* SQLInjectionArticlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1462779716C56BDD007FE838 /* SQLInjectionArticlesViewController.xib */; };
 		1462775F16C56431007FE838 /* Assets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1462775E16C56431007FE838 /* Assets.plist */; };
 		1462776716C56447007FE838 /* rutger.html in Resources */ = {isa = PBXBuildFile; fileRef = 1462776016C56447007FE838 /* rutger.html */; };
 		1462776916C56447007FE838 /* igoat.css in Resources */ = {isa = PBXBuildFile; fileRef = 1462776216C56447007FE838 /* igoat.css */; };
@@ -487,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143D7A2F16DD006D001AE794 /* articles.sqlite in Resources */,
 				141E2FC816C3D49900586528 /* InfoPlist.strings in Resources */,
 				141E2FD016C3D49900586528 /* Default.png in Resources */,
 				141E2FD216C3D49900586528 /* Default@2x.png in Resources */,
@@ -518,6 +521,7 @@
 				14CFECF016D7C6FF00B6E6E7 /* ServerCommunicationExerciseController_iPad.xib in Resources */,
 				14CFECF216D7CA3B00B6E6E7 /* SQLInjectionExerciseController_iPhone.xib in Resources */,
 				14CFECF616D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib in Resources */,
+				143D7A3016DD0078001AE794 /* SQLInjectionArticlesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
