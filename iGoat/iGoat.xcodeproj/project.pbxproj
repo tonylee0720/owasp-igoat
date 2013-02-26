@@ -197,7 +197,6 @@
 		141E2FB116C3D49900586528 = {
 			isa = PBXGroup;
 			children = (
-				14D8962516DA886F00D0720A /* libsqlite3.dylib */,
 				141E2FC316C3D49900586528 /* iGoat */,
 				141E2FBC16C3D49900586528 /* Frameworks */,
 				141E2FBB16C3D49900586528 /* Products */,
@@ -215,6 +214,7 @@
 		141E2FBC16C3D49900586528 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14D8962516DA886F00D0720A /* libsqlite3.dylib */,
 				1472EAB716D798C400AD63D1 /* SystemConfiguration.framework */,
 				1472EAB516D798B100AD63D1 /* Security.framework */,
 				141E2FBD16C3D49900586528 /* UIKit.framework */,
