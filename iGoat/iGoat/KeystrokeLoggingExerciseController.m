@@ -42,6 +42,14 @@
 // KeystrokeLoggingExercise XIBs and go to the attibutes inspector. In here you
 // can select the value for 'Correction'.
 //
+// NOTE: This is only a partial solution to the problem! Did you notice not all
+// the typed information is protected from being logged? We've found some
+// workarounds to this behavior, but there is always some information leakage
+// via the keylogging mechanism. The good news is that on a real device, the
+// keylogging is outside of the sandbox, and (more importantly), there's no
+// clear context to the information stored in the log. It's far from perfect,
+// however.
+//
 //******************************************************************************
 
 //******************************************************************************
