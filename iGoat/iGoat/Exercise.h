@@ -9,8 +9,8 @@
 
 @property (strong, nonatomic) NSString *creditsFile;
 @property (strong, nonatomic) NSMutableArray *hints;
-@property (nonatomic) int hintIndex;
-@property (nonatomic) int totalHints;
+@property (nonatomic) NSInteger hintIndex;
+@property (nonatomic) NSInteger totalHints;
 @property (strong, nonatomic) NSString *solution;
 @property (strong, nonatomic) ExerciseCategory *category;
 @property (strong, nonatomic) NSString *initialViewController;
