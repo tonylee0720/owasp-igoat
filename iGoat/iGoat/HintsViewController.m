@@ -39,8 +39,8 @@
 }
 
 - (void)pageDidChangeAction {
-    int page = self.pageControl.currentPage;
-    int idx = self.exercise.hintIndex;
+    NSInteger page = self.pageControl.currentPage;
+    NSInteger idx = self.exercise.hintIndex;
 
     [self.pageControl updateCurrentPageDisplay];
 
@@ -52,7 +52,7 @@
 }
 
 - (void)loadNextHint {
-    int idx = self.exercise.hintIndex + 1;
+    NSInteger idx = self.exercise.hintIndex + 1;
 
     if (idx < self.exercise.totalHints) {
         self.exercise.hintIndex = idx;
@@ -62,7 +62,7 @@
 }
 
 - (void)loadPreviousHint {
-    int idx = self.exercise.hintIndex - 1;
+    NSInteger idx = self.exercise.hintIndex - 1;
     
     if (idx >= 0) {
         self.exercise.hintIndex = idx;
@@ -79,7 +79,7 @@
         return [NSString stringWithFormat:@"<html><head>"
                 "<link href=\"igoat.css\" rel=\"stylesheet\" type=\"text/css\">"
                 "<head><body><h2>%@ (%d/%d)</h2>%@</body></html>",
-                self.exercise.name, (self.exercise.hintIndex + 1), self.exercise.totalHints, text];
+                self.exercise.name, (int)(self.exercise.hintIndex + 1), (int)self.exercise.totalHints, text];
     }
 }
 
