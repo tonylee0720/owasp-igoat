@@ -75,8 +75,6 @@
 		<key>exercises</key>
 		<array>
 			<dict>
-				<key>initialViewController</key>
-				<string>CutAndPasteExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -93,6 +91,8 @@
 					<string>Exit iGoat and paste it into another app.</string>
 					<string>If it successfully pasted outside of iGoat, then you&apos;ve leaked sensitive data.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>CutAndPasteExerciseController</string>
 				<key>name</key>
 				<string>Cut-and-Paste</string>
 				<key>solution</key>
@@ -115,8 +115,6 @@
                     prior to reverting to the commented source, however.</string>
 			</dict>
 			<dict>
-				<key>initialViewController</key>
-				<string>BackgroundingExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -138,6 +136,8 @@
 					<string>Verify that the sensitive data was stored in a JPG file on the
                         device.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>BackgroundingExerciseController</string>
 				<key>name</key>
 				<string>Backgrounding</string>
 				<key>solution</key>
@@ -166,8 +166,6 @@
                 </string>
 			</dict>
 			<dict>
-				<key>initialViewController</key>
-				<string>LocalDataStorageExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -186,6 +184,8 @@
                         database.</string>
 					<string>Now, go verify the sensitive data in the database file.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>LocalDataStorageExerciseController</string>
 				<key>name</key>
 				<string>Local Data Storage</string>
 				<key>solution</key>
@@ -219,8 +219,6 @@
                 </string>
 			</dict>
 			<dict>
-				<key>initialViewController</key>
-				<string>KeychainExerciseViewController</string>
 				<key>creditsFile</key>
 				<string>mansi.html</string>
 				<key>description</key>
@@ -238,6 +236,8 @@ This information is also stored in:
                         ~/Library/Application Support/iPhone Simulator/&lt;{version}&gt;/Applications
                         &lt;{Bundle ID}&gt;/Library/Preferences/com.krvw.iGoat.plist</string>
 				</array>
+				<key>initialViewController</key>
+				<string>KeychainExerciseViewController</string>
 				<key>name</key>
 				<string>Keychain Usage</string>
 				<key>solution</key>
@@ -248,8 +248,6 @@ It is recommended by Apple to use the keychain on iPhone to store passwords and 
 Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&quot;. This function uses  &quot;SecItemAdd&quot;, &quot;SecItemCopyMatch&quot; and &quot;SecItemUpdate&quot; for adding, retrieving and updating items in an app&apos;s keychain.</string>
 			</dict>
 			<dict>
-				<key>initialViewController</key>
-				<string>KeystrokeLoggingExerciseController</string>
 				<key>creditsFile</key>
 				<string>rutger.html</string>
 				<key>description</key>
@@ -263,6 +261,8 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 					<string>Make sure you make one or two typing mistakes to see autocorrect in action and verify that autocorrect is in use.</string>
 					<string>When done entering data, close iGoat and see if you can retrieve the data that was suposedly stored on the simulator.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>KeystrokeLoggingExerciseController</string>
 				<key>name</key>
 				<string>Keystroke Logging</string>
 				<key>solution</key>
@@ -288,8 +288,6 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 			<dict>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
-				<key>initialViewController</key>
-				<string>ServerCommunicationExerciseController</string>
 				<key>description</key>
 				<string>This exercise demonstrates the need for protecting sensitive data when it is in transit from the iOS device to the server. In the first step, you are presented with an authentication page. From there, you will log in using the provided account credentials--and see whether they get compromised in transit.</string>
 				<key>hints</key>
@@ -303,6 +301,8 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
                         ./igoat_server.rb from the server folder in your iGoat distribution</string>
 					<string>Now, run the exercise and send the data in the provided fields to the server by pressing the submit button.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>ServerCommunicationExerciseController</string>
 				<key>name</key>
 				<string>Server Communication</string>
 				<key>solution</key>
@@ -318,6 +318,36 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
                     lifting&quot; in creating a simple SSL-encrypted HTTP connection.
                 </string>
 			</dict>
+			<dict>
+				<key>creditsFile</key>
+				<string>KRvWAssociates.html</string>
+				<key>description</key>
+				<string>In this exercise, you will verify the identity of the server you have connected to via SSL. You must verify the identify of the backend server during the initial SSL handshake.  Otherwise, transmitted sensitive data can still be intercepted by the hacker. First, the hacker sets up a malicious SSL server that will receive the sensitive data.  Then, the attacker exploits various infrastructure attacks (ARP Cache poisoning; DNS attacks) and redirects the mobile app's SSL connection requests to the rogue server (using a WiFi Pineapple Mark V device).  The rogue server will receive sensitive data issued by the client.
+                    
+Pinning is the process of a mobile app verifying an SSL server&apos;s identity through attributes contained within the certificate issued by the server. There are a number of different certificate attributes that the client can associate (or pin) to the server&apos;s identity.  In this exercise, we pin the public key to the server&apos;s identity and use the public key as a reliable and consistent way to verify the server&apos;s identity over time. This is particuarly advantageous when an organization&apos;s outer certificate periodically rotates while the inner key does not.</string>
+				<key>hints</key>
+				<array>
+                    <string>Be sure to startup the local iGoat servers before this exercise! The servers are found in the &lt;i&gt;server&lt;/i&gt; directory and are written in Ruby. The legitimate server runs on port 8443 and a malicious server runs on port 8442.</string>
+                    <string>An attacker may exploit ARP Cache poisoning to redirect all legitimate requests from the intended server to a malicious third-party site instead.</string>
+                    <string>An attacker may exploit DNS cache poisoning to redirect all legitimate requests from the intended server to a malicious third-party site instead.</string>
+                    <string>Check out the &lt;i&gt;Pinaepple Mark V&lt;/i&gt; device to see how easy it can be to intercept and redirect mobile app traffic.</string>
+                    <string>For this demo, exploiting an infrastructure attack to redirect will be difficult because the intended server is on the localhost. You can simulate a redirection attack to a third-party site by changing the destination server's port (in the source code) to 8442.</string>
+				</array>
+				<key>initialViewController</key>
+				<string>PublicKeyPinningExerciseController</string>
+				<key>name</key>
+				<string>Public Key Pinning</string>
+				<key>solution</key>
+				<string>Exploiting this weakness is easy. Just run the server process, and launch the exercise. In the exercise, submit the sensitive data (the user&apos;s account information) to the server.
+                    
+                    A malicious server receives the user&apos;s sensitive data instead of the legitimate SSL server. This simulates a &quot;redirection attack&quot;. The data is encrypted during transmission and this will prevent a hacker from stealing sensitive data via traffic sniffing. However, the code unconditionally transmits its sensitive data to the server after establishing an SSL session. It assumes that the SSL server is legitimate.
+                    
+                    Remediating this weakness is best done by inspecting the actual certificate issued by the SSL server during the initial handshake. There are a number of different attributes that the app can inspect within the certificate. Inspecting the public key is advantageous as this is relatively stable over time. However, this logic assumes that there are no SSL proxies between the client and the server.
+                    
+                    Using SSL in iOS is quite easy, as NSURL does much of the &quot;heavy
+                    lifting&quot; in creating a simple SSL-encrypted HTTP connection. Finding adequate documentation for how to insepct a certificate&quot;s public key inspection is challenging.
+                </string>
+			</dict>
 		</array>
 	</dict>
 	<key>Injection Flaws</key>
@@ -327,8 +357,6 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 		<key>exercises</key>
 		<array>
 			<dict>
-				<key>initialViewController</key>
-				<string>SQLInjectionExerciseController</string>
 				<key>creditsFile</key>
 				<string>KRvWAssociates.html</string>
 				<key>description</key>
@@ -356,6 +384,8 @@ Keychain API usage is demonstrated in function &quot;storeCredentialsInKeychain&
 					<string>Try one of the dreaded 1=1 attacks next to see if you can dump
                         all the data in the database.</string>
 				</array>
+				<key>initialViewController</key>
+				<string>SQLInjectionExerciseController</string>
 				<key>name</key>
 				<string>SQL Injection</string>
 				<key>solution</key>

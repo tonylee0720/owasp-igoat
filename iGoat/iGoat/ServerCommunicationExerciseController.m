@@ -3,7 +3,7 @@
 
 @implementation ServerCommunicationExerciseController
 
-NSString * const USER_URL = @"http://localhost:8080/igoat/user";
+NSString * const SERVERCOMMUNICATION_USER_URL = @"http://localhost:8080/igoat/user";
 
 @synthesize firstNameField, lastNameField, ssnField;
 
@@ -16,7 +16,7 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 	
 	NSString *jsonString = [[NSString alloc] initWithString:[jsonWriter stringWithObject:accountInfo]];
     
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:USER_URL]];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:SERVERCOMMUNICATION_USER_URL]];
 	responseData = [NSMutableData data];
 	
 	[request setHTTPMethod:@"POST"];
@@ -72,7 +72,7 @@ NSString * const USER_URL = @"http://localhost:8080/igoat/user";
 //
 // The iGoat server listens on two separate ports simultaneously; 8443 (SSL)
 // and 8080 (non-SSL). To secure the POST to the /igoat/user endpoint, change
-// the USER_URL constant at the top of the file to...
+// the SERVERCOMMUNICATION_USER_URL constant at the top of the file to...
 //
 // "https://localhost:8443/igoat/user"
 //

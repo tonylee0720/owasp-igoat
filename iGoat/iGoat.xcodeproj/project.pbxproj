@@ -74,6 +74,10 @@
 		14CFECF416D7CAD200B6E6E7 /* SQLInjectionArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1462779616C56BDD007FE838 /* SQLInjectionArticlesViewController.m */; };
 		14CFECF616D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CFECF516D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib */; };
 		14D8962716DA888E00D0720A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D8962516DA886F00D0720A /* libsqlite3.dylib */; };
+		BC837C0219BF7C86003E4CFF /* iGoatSSLServer.der in Resources */ = {isa = PBXBuildFile; fileRef = BC837C0119BF7C86003E4CFF /* iGoatSSLServer.der */; };
+		BCFB4AE319BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFB4ADF19BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib */; };
+		BCFB4AE419BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFB4AE019BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib */; };
+		BCFB4AE519BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB4AE219BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +181,11 @@
 		14CFECF116D7CA3B00B6E6E7 /* SQLInjectionExerciseController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLInjectionExerciseController_iPhone.xib; sourceTree = "<group>"; };
 		14CFECF516D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLInjectionExerciseController_iPad.xib; sourceTree = "<group>"; };
 		14D8962516DA886F00D0720A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BC837C0119BF7C86003E4CFF /* iGoatSSLServer.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = iGoatSSLServer.der; sourceTree = "<group>"; };
+		BCFB4ADF19BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicKeyPinningExerciseController_iPad.xib; sourceTree = "<group>"; };
+		BCFB4AE019BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicKeyPinningExerciseController_iPhone.xib; sourceTree = "<group>"; };
+		BCFB4AE119BE43EA00CB15F2 /* PublicKeyPinningExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicKeyPinningExerciseController.h; sourceTree = "<group>"; };
+		BCFB4AE219BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicKeyPinningExerciseController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +273,7 @@
 		1462775D16C56410007FE838 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC837C0119BF7C86003E4CFF /* iGoatSSLServer.der */,
 				1462776316C56447007FE838 /* about.html */,
 				1462776E16C5645F007FE838 /* mansi.html */,
 				1462776016C56447007FE838 /* rutger.html */,
@@ -293,6 +303,7 @@
 		1462777F16C56B2E007FE838 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				BCFB4ADE19BE430600CB15F2 /* Public Key Pinning */,
 				1462778616C56B77007FE838 /* Authentication */,
 				1462778516C56B6C007FE838 /* Backgrounding */,
 				1462778416C56B62007FE838 /* Cut-and-Paste */,
@@ -438,6 +449,17 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		BCFB4ADE19BE430600CB15F2 /* Public Key Pinning */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB4ADF19BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib */,
+				BCFB4AE019BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib */,
+				BCFB4AE119BE43EA00CB15F2 /* PublicKeyPinningExerciseController.h */,
+				BCFB4AE219BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m */,
+			);
+			name = "Public Key Pinning";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -493,6 +515,7 @@
 				141E2FC816C3D49900586528 /* InfoPlist.strings in Resources */,
 				141E2FD016C3D49900586528 /* Default.png in Resources */,
 				141E2FD216C3D49900586528 /* Default@2x.png in Resources */,
+				BCFB4AE419BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib in Resources */,
 				141E2FD416C3D49900586528 /* Default-568h@2x.png in Resources */,
 				141E2FD716C3D49900586528 /* MainStoryboard_iPhone.storyboard in Resources */,
 				141E2FDA16C3D49900586528 /* MainStoryboard_iPad.storyboard in Resources */,
@@ -504,11 +527,13 @@
 				1462776C16C56447007FE838 /* KRvWAssociates.html in Resources */,
 				1462776F16C5645F007FE838 /* mansi.html in Resources */,
 				1462777C16C5653E007FE838 /* Icon.png in Resources */,
+				BC837C0219BF7C86003E4CFF /* iGoatSSLServer.der in Resources */,
 				1462777E16C56546007FE838 /* Icon@2x.png in Resources */,
 				1475029916D4DF6F009C2432 /* RemoteAuthenticationExerciseController_iPad.xib in Resources */,
 				1472EAA616D66FA300AD63D1 /* RemoteAuthenticationExerciseController_iPhone.xib in Resources */,
 				1472EAA816D6888C00AD63D1 /* BackgroundingExerciseController_iPhone.xib in Resources */,
 				1472EAAB16D68B6C00AD63D1 /* BackgroundingExerciseController_iPad.xib in Resources */,
+				BCFB4AE319BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib in Resources */,
 				1472EAAD16D695D800AD63D1 /* CutAndPasteExerciseController_iPhone.xib in Resources */,
 				1472EAB416D7969100AD63D1 /* KeychainExerciseViewController_iPhone.xib in Resources */,
 				1472EABA16D7A81C00AD63D1 /* KeystrokeLoggingExerciseController_iPhone.xib in Resources */,
@@ -547,6 +572,7 @@
 				141E2FCA16C3D49900586528 /* main.m in Sources */,
 				141E2FCE16C3D49900586528 /* AppDelegate.m in Sources */,
 				141E2FDD16C3D49900586528 /* MasterViewController.m in Sources */,
+				BCFB4AE519BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m in Sources */,
 				141E2FE016C3D49900586528 /* DetailViewController.m in Sources */,
 				146277B416C95FAB007FE838 /* Asset.m in Sources */,
 				146277B516C95FAB007FE838 /* AssetStore.m in Sources */,
