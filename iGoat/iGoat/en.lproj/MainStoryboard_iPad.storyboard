@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="5">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -10,7 +10,6 @@
                 <navigationController id="3" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="6">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -21,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-401" y="-1072"/>
         </scene>
-        <!--Detail View Controller - Introduction-->
+        <!--Introduction-->
         <scene sceneID="16">
             <objects>
                 <viewController title="Introduction" id="4" customClass="DetailViewController" sceneMemberID="viewController">
@@ -46,7 +45,6 @@
                             <constraint firstItem="jtd-rX-myf" firstAttribute="leading" secondItem="26" secondAttribute="leading" id="FR1-yF-CoE"/>
                             <constraint firstItem="jtd-rX-myf" firstAttribute="bottom" secondItem="26" secondAttribute="bottom" id="Nhu-My-qwY"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dkP-zS-eWC"/>
@@ -73,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="376" y="-144"/>
         </scene>
-        <!--Exercise Container View Controller - Exercise-->
+        <!--Exercise-->
         <scene sceneID="oCB-HS-OZ9">
             <objects>
                 <viewController title="Exercise" id="qmL-2B-hAm" customClass="ExerciseContainerViewController" sceneMemberID="viewController">
@@ -85,7 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.16862745100000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="eTQ-vi-Adm"/>
@@ -111,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1299" y="-144"/>
         </scene>
-        <!--Html View Controller - Credits-->
+        <!--Credits-->
         <scene sceneID="ovn-5w-X1A">
             <objects>
                 <viewController title="Credits" id="HFh-tO-CZE" customClass="HtmlViewController" sceneMemberID="viewController">
@@ -135,7 +132,6 @@
                             <constraint firstItem="6w8-JR-Rz3" firstAttribute="leading" secondItem="DsI-JH-XTi" secondAttribute="leading" id="ln2-5E-sIE"/>
                             <constraint firstItem="6w8-JR-Rz3" firstAttribute="top" secondItem="DsI-JH-XTi" secondAttribute="top" id="taD-df-tUA"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Credits" id="K1A-5I-NND"/>
@@ -163,7 +159,7 @@
             </objects>
             <point key="canvasLocation" x="-1645" y="-1072"/>
         </scene>
-        <!--Master View Controller - Categories-->
+        <!--Categories-->
         <scene sceneID="24">
             <objects>
                 <tableViewController title="Categories" clearsSelectionOnViewWillAppear="NO" id="19" customClass="MasterViewController" sceneMemberID="viewController">
@@ -171,7 +167,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.16862745100000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="hnM-hd-5bg" style="IBUITableViewCellStyleDefault" id="ZSw-0O-9Pw">
@@ -209,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="-18" y="-1072"/>
         </scene>
-        <!--Exercises View Controller - Exercises-->
+        <!--Exercises-->
         <scene sceneID="atA-tI-77C">
             <objects>
                 <tableViewController title="Exercises" id="tiE-tS-PsB" customClass="ExercisesViewController" sceneMemberID="viewController">
@@ -217,7 +212,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14901960780000001" green="0.16862745100000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <color key="separatorColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="C99-hV-EVR" style="IBUITableViewCellStyleDefault" id="HTi-6H-XFc">
@@ -257,7 +251,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="43">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" id="8FM-ei-ZRZ">
@@ -272,7 +265,7 @@
             </objects>
             <point key="canvasLocation" x="-401" y="-144"/>
         </scene>
-        <!--Html View Controller - Solution-->
+        <!--Solution-->
         <scene sceneID="GRa-cn-dB3">
             <objects>
                 <viewController title="Solution" id="dvj-bE-slP" customClass="HtmlViewController" sceneMemberID="viewController">
@@ -296,7 +289,6 @@
                             <constraint firstItem="vtR-6E-khz" firstAttribute="bottom" secondItem="tCc-ml-Zwi" secondAttribute="bottom" id="vmK-M4-lYV"/>
                             <constraint firstItem="vtR-6E-khz" firstAttribute="trailing" secondItem="tCc-ml-Zwi" secondAttribute="trailing" id="xPR-o2-B9g"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Solution" id="B0L-KF-WPQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
@@ -309,7 +301,7 @@
             </objects>
             <point key="canvasLocation" x="2222" y="-623"/>
         </scene>
-        <!--Hints View Controller - Hints-->
+        <!--Hints-->
         <scene sceneID="Liu-MM-rJH">
             <objects>
                 <viewController title="Hints" id="hbu-Ap-sUO" customClass="HintsViewController" sceneMemberID="viewController">
@@ -352,7 +344,6 @@
                             <constraint firstItem="h9D-0V-bQX" firstAttribute="top" secondItem="iab-QU-HCr" secondAttribute="top" id="RVG-A5-BTv"/>
                             <constraint firstAttribute="trailing" secondItem="h9D-0V-bQX" secondAttribute="trailing" constant="-1" id="Ri9-Iv-pIi"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hints" id="P97-1v-m16"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>

@@ -75,6 +75,12 @@
 		14CFECF616D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CFECF516D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib */; };
 		14D8962716DA888E00D0720A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D8962516DA886F00D0720A /* libsqlite3.dylib */; };
 		BC837C0219BF7C86003E4CFF /* iGoatSSLServer.der in Resources */ = {isa = PBXBuildFile; fileRef = BC837C0119BF7C86003E4CFF /* iGoatSSLServer.der */; };
+		BCA6D1C919DA14FF00002CA0 /* StringAnalysisExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA6D1C519DA14FF00002CA0 /* StringAnalysisExerciseController_iPad.xib */; };
+		BCA6D1CB19DA14FF00002CA0 /* StringAnalysisExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA6D1C819DA14FF00002CA0 /* StringAnalysisExerciseController.m */; };
+		BCA6D1CD19DA15A600002CA0 /* StringAnalysisExerciseController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA6D1CC19DA15A600002CA0 /* StringAnalysisExerciseController_iPhone.xib */; };
+		BCF7AD5819D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF7AD5419D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPad.xib */; };
+		BCF7AD5919D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF7AD5519D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPhone.xib */; };
+		BCF7AD5A19D0C2A8007ED80A /* MethodSwizzlingExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF7AD5719D0C2A8007ED80A /* MethodSwizzlingExerciseController.m */; };
 		BCFB4AE319BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFB4ADF19BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib */; };
 		BCFB4AE419BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCFB4AE019BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib */; };
 		BCFB4AE519BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFB4AE219BE43EA00CB15F2 /* PublicKeyPinningExerciseController.m */; };
@@ -182,6 +188,14 @@
 		14CFECF516D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLInjectionExerciseController_iPad.xib; sourceTree = "<group>"; };
 		14D8962516DA886F00D0720A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		BC837C0119BF7C86003E4CFF /* iGoatSSLServer.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = iGoatSSLServer.der; sourceTree = "<group>"; };
+		BCA6D1C519DA14FF00002CA0 /* StringAnalysisExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StringAnalysisExerciseController_iPad.xib; sourceTree = "<group>"; };
+		BCA6D1C719DA14FF00002CA0 /* StringAnalysisExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringAnalysisExerciseController.h; sourceTree = "<group>"; };
+		BCA6D1C819DA14FF00002CA0 /* StringAnalysisExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringAnalysisExerciseController.m; sourceTree = "<group>"; };
+		BCA6D1CC19DA15A600002CA0 /* StringAnalysisExerciseController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StringAnalysisExerciseController_iPhone.xib; sourceTree = "<group>"; };
+		BCF7AD5419D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MethodSwizzlingExerciseController_iPad.xib; sourceTree = "<group>"; };
+		BCF7AD5519D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MethodSwizzlingExerciseController_iPhone.xib; sourceTree = "<group>"; };
+		BCF7AD5619D0C2A8007ED80A /* MethodSwizzlingExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodSwizzlingExerciseController.h; sourceTree = "<group>"; };
+		BCF7AD5719D0C2A8007ED80A /* MethodSwizzlingExerciseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingExerciseController.m; sourceTree = "<group>"; };
 		BCFB4ADF19BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicKeyPinningExerciseController_iPad.xib; sourceTree = "<group>"; };
 		BCFB4AE019BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicKeyPinningExerciseController_iPhone.xib; sourceTree = "<group>"; };
 		BCFB4AE119BE43EA00CB15F2 /* PublicKeyPinningExerciseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicKeyPinningExerciseController.h; sourceTree = "<group>"; };
@@ -303,6 +317,8 @@
 		1462777F16C56B2E007FE838 /* Exercises */ = {
 			isa = PBXGroup;
 			children = (
+				BCA6D1C419D9F59100002CA0 /* String Analysis */,
+				BCF7AD5319D0C167007ED80A /* Method Swizzling */,
 				BCFB4ADE19BE430600CB15F2 /* Public Key Pinning */,
 				1462778616C56B77007FE838 /* Authentication */,
 				1462778516C56B6C007FE838 /* Backgrounding */,
@@ -449,6 +465,28 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		BCA6D1C419D9F59100002CA0 /* String Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				BCA6D1CC19DA15A600002CA0 /* StringAnalysisExerciseController_iPhone.xib */,
+				BCA6D1C519DA14FF00002CA0 /* StringAnalysisExerciseController_iPad.xib */,
+				BCA6D1C719DA14FF00002CA0 /* StringAnalysisExerciseController.h */,
+				BCA6D1C819DA14FF00002CA0 /* StringAnalysisExerciseController.m */,
+			);
+			name = "String Analysis";
+			sourceTree = "<group>";
+		};
+		BCF7AD5319D0C167007ED80A /* Method Swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				BCF7AD5419D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPad.xib */,
+				BCF7AD5519D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPhone.xib */,
+				BCF7AD5619D0C2A8007ED80A /* MethodSwizzlingExerciseController.h */,
+				BCF7AD5719D0C2A8007ED80A /* MethodSwizzlingExerciseController.m */,
+			);
+			name = "Method Swizzling";
+			sourceTree = "<group>";
+		};
 		BCFB4ADE19BE430600CB15F2 /* Public Key Pinning */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,11 +556,13 @@
 				BCFB4AE419BE43EA00CB15F2 /* PublicKeyPinningExerciseController_iPhone.xib in Resources */,
 				141E2FD416C3D49900586528 /* Default-568h@2x.png in Resources */,
 				141E2FD716C3D49900586528 /* MainStoryboard_iPhone.storyboard in Resources */,
+				BCF7AD5919D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPhone.xib in Resources */,
 				141E2FDA16C3D49900586528 /* MainStoryboard_iPad.storyboard in Resources */,
 				1462775F16C56431007FE838 /* Assets.plist in Resources */,
 				1462776716C56447007FE838 /* rutger.html in Resources */,
 				1462776916C56447007FE838 /* igoat.css in Resources */,
 				1462776A16C56447007FE838 /* about.html in Resources */,
+				BCA6D1CD19DA15A600002CA0 /* StringAnalysisExerciseController_iPhone.xib in Resources */,
 				1462776B16C56447007FE838 /* splash.html in Resources */,
 				1462776C16C56447007FE838 /* KRvWAssociates.html in Resources */,
 				1462776F16C5645F007FE838 /* mansi.html in Resources */,
@@ -547,6 +587,8 @@
 				14CFECF216D7CA3B00B6E6E7 /* SQLInjectionExerciseController_iPhone.xib in Resources */,
 				14CFECF616D7CC1400B6E6E7 /* SQLInjectionExerciseController_iPad.xib in Resources */,
 				143D7A3016DD0078001AE794 /* SQLInjectionArticlesViewController.xib in Resources */,
+				BCF7AD5819D0C2A8007ED80A /* MethodSwizzlingExerciseController_iPad.xib in Resources */,
+				BCA6D1C919DA14FF00002CA0 /* StringAnalysisExerciseController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +601,10 @@
 			files = (
 				14CFECF316D7CAD200B6E6E7 /* SQLInjectionExerciseController.m in Sources */,
 				14CFECF416D7CAD200B6E6E7 /* SQLInjectionArticlesViewController.m in Sources */,
+				BCF7AD5A19D0C2A8007ED80A /* MethodSwizzlingExerciseController.m in Sources */,
 				14CFECDB16D7C27100B6E6E7 /* ServerCommunicationExerciseController.m in Sources */,
 				1472EAC216D7B23600AD63D1 /* LocalDataStorageExerciseController.m in Sources */,
+				BCA6D1CB19DA14FF00002CA0 /* StringAnalysisExerciseController.m in Sources */,
 				1472EABB16D7AA4800AD63D1 /* KeystrokeLoggingExerciseController.m in Sources */,
 				1472EAB216D790B700AD63D1 /* KeychainExerciseViewController.m in Sources */,
 				1472EAAE16D695E400AD63D1 /* CutAndPasteExerciseController.m in Sources */,
